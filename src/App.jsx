@@ -1769,26 +1769,14 @@ export default function App() {
                           )}
                         </div>
                         
-                        <button 
-                          className="water-btn-circle" style={{ width: '28px', height: '28px' }}
-                          onClick={() => {
-                            setSelectedMealType(category);
-                            setShowAddMealModal(true);
-                          }}
-                        >
-                          <Plus size={14} />
-                        </button>
                       </div>
 
                       {categoryMeals.length === 0 ? (
                         <div 
                           className="empty-dashed-slot"
-                          onClick={() => {
-                            setSelectedMealType(category);
-                            setShowAddMealModal(true);
-                          }}
+                          style={{ cursor: 'default', opacity: 0.6 }}
                         >
-                          + Log {category}
+                          No meals logged for {category} yet
                         </div>
                       ) : (
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
