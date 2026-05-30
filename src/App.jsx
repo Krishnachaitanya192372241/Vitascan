@@ -209,7 +209,9 @@ export default function App() {
   const [scanResult, setScanResult] = useState(null);
 
   // Plan States
-  const [planStatus, setPlanStatus] = useState('idle');
+  const [planStatus, setPlanStatus] = useState(() => {
+    return localStorage.getItem('vitascan_diet_plan') ? 'success' : 'idle';
+  });
   const [dietPlan, setDietPlan] = useState(() => {
     try {
       const saved = localStorage.getItem('vitascan_diet_plan');
