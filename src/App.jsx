@@ -2053,9 +2053,9 @@ export default function App() {
                       
                       <div className="grid-4">
                         {day.meals?.map((m, i) => (
-                          <div key={i} className="glass-card" style={{ background: 'rgba(255,255,255,0.01)', height: '260px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '0', overflow: 'hidden' }}>
+                          <div key={i} className="glass-card" style={{ background: 'rgba(255,255,255,0.01)', minHeight: '320px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '0', overflow: 'hidden' }}>
                             {m.img && (
-                              <img src={m.img} alt={m.name} style={{ width: '100%', height: '110px', objectFit: 'cover' }} />
+                              <img src={m.img} alt={m.name} style={{ width: '100%', height: '160px', objectFit: 'cover' }} />
                             )}
                             <div style={{ padding: '12px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                               <div>
