@@ -770,15 +770,44 @@ export default function App() {
       const resData = await response.json();
       const rawText = resData.candidates?.[0]?.content?.parts?.[0]?.text;
       
+      console.log("=== GEMINI API DEBUG (SCAN) ===");
+      console.log("2. RESPONSE STATUS CODE:", response.status);
+      console.log("3. RESPONSE BODY:", resData);
+      
       if (rawText) {
+        console.log("1. RAW GEMINI RESPONSE:\n" + rawText);
         let clean = rawText.trim();
-        if (clean.startsWith("```json")) clean = clean.replace(/^```json/, '').replace(/```$/, '').trim();
-        const parsed = JSON.parse(clean);
-        parsed.isRealAI = true;
-        setScanResult(parsed);
-        setScanStatus('success');
+        if (clean.startsWith("```json")) clean = clean.replace(/^```json\n?/, '').replace(/\n?```$/, '').trim();
+        
+        let extractedJson = clean;
+        const startIndex = clean.indexOf('{');
+        if (startIndex !== -1) {
+          let braceCount = 0;
+          for (let i = startIndex; i < clean.length; i++) {
+            if (clean[i] === '{') braceCount++;
+            else if (clean[i] === '}') braceCount--;
+            if (braceCount === 0) {
+              extractedJson = clean.substring(startIndex, i + 1);
+              break;
+            }
+          }
+        }
+        
+        console.log("PARSE ATTEMPT:", extractedJson);
+        try {
+          const parsed = JSON.parse(extractedJson);
+          console.log("PARSE SUCCESS: true");
+          console.log("4. PARSED JSON OBJECT:", parsed);
+          parsed.isRealAI = true;
+          setScanResult(parsed);
+          setScanStatus('success');
+        } catch (e) {
+          console.log("PARSE SUCCESS: false");
+          throw new Error("Failed to parse AI JSON: " + e.message);
+        }
       } else {
-        throw new Error("No response from AI");
+        const errMsg = resData.error?.message || "No response from AI";
+        throw new Error(errMsg);
       }
     } catch (err) {
       alert("AI Analysis Error: " + err.message);
@@ -916,39 +945,42 @@ export default function App() {
 
       const resData = await response.json();
       const rawText = resData.candidates?.[0]?.content?.parts?.[0]?.text;
-      
-      if (rawText) {
-        let clean = rawText.trim();
-        // Extract strictly the first balanced JSON object
-        let extractedJson = clean;
-        const startIndex = clean.indexOf('{');
-        if (startIndex !== -1) {
-          let braceCount = 0;
-          for (let i = startIndex; i < clean.length; i++) {
-            if (clean[i] === '{') braceCount++;
-            else if (clean[i] === '}') braceCount--;
-            
-            if (braceCount === 0) {
-              extractedJson = clean.substring(startIndex, i + 1);
-              break;
+        
+        console.log("=== GEMINI API DEBUG (DIET PLAN) ===");
+        console.log("2. RESPONSE STATUS CODE:", response.status);
+        console.log("3. RESPONSE BODY:", resData);
+        
+        if (rawText) {
+          console.log("1. RAW GEMINI RESPONSE:\n" + rawText);
+          let clean = rawText.trim();
+          if (clean.startsWith("```json")) clean = clean.replace(/^```json\n?/, '').replace(/\n?```$/, '').trim();
+          // Extract strictly the first balanced JSON object
+          let extractedJson = clean;
+          const startIndex = clean.indexOf('{');
+          if (startIndex !== -1) {
+            let braceCount = 0;
+            for (let i = startIndex; i < clean.length; i++) {
+              if (clean[i] === '{') braceCount++;
+              else if (clean[i] === '}') braceCount--;
+              
+              if (braceCount === 0) {
+                extractedJson = clean.substring(startIndex, i + 1);
+                break;
+              }
             }
           }
-        }
-        
-        console.log("RAW RESPONSE:", rawText);
-        console.log("EXTRACTED JSON:", extractedJson);
-        
-        let parsed;
-        try {
-          parsed = JSON.parse(extractedJson);
-        } catch (parseError) {
-          console.error("Failed to parse AI JSON. Raw text was:", rawText);
-          if (retryCount < 1) {
-            console.warn("Retrying AI Generation (JSON parse failure)...");
-            return handleGenerateDietPlan(force, overrideUser, retryCount + 1);
+          
+          console.log("PARSE ATTEMPT:\n" + extractedJson);
+          
+          let parsed;
+          try {
+            parsed = JSON.parse(extractedJson);
+            console.log("PARSE SUCCESS: true");
+            console.log("4. PARSED JSON OBJECT:", parsed);
+          } catch (parseError) {
+            console.log("PARSE SUCCESS: false");
+            throw new Error("Failed to parse AI response JSON: " + parseError.message);
           }
-          throw new Error("Failed to parse AI response JSON: " + parseError.message);
-        }
         
         // Validation Layer
         const currentPref = onboarding.dietPreference || 'Balanced';
@@ -986,11 +1018,12 @@ export default function App() {
         setPlanStatus('success');
       } else {
         console.error("Invalid AI response. Full resData:", resData);
+        const errMsg = resData.error?.message || "Invalid AI response from Gemini API.";
         if (retryCount < 1) {
           console.warn("Retrying AI Generation (Invalid response)...");
           return handleGenerateDietPlan(force, overrideUser, retryCount + 1);
         }
-        throw new Error("Invalid AI response from Gemini API.");
+        throw new Error(errMsg);
       }
     } catch (e) {
       console.error(e);
