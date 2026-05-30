@@ -28,7 +28,7 @@ import {
 
 import { supabase } from './supabaseClient';
 
-const API_BASE = 'https://vitascan-cwwx.onrender.com/api';
+const API_BASE = 'https://vitascan-backend-9ehb.onrender.com/api';
 
 import enDict from './locales/en.json';
 import hiDict from './locales/hi.json';
