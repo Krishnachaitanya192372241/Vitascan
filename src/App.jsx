@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Trash2, Camera, Sparkles, Info, Globe, LayoutDashboard, Calendar, Activity, LogOut, Sliders, Droplet, Award, TrendingUp, Settings as SettingsIcon, ThumbsUp, ThumbsDown, Moon, Sun, FileText, Eye, EyeOff, HeartPulse, Check } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
 import { supabase } from './supabaseClient';
 const API_BASE = 'https://vitascan-backend-9ehb.onrender.com/api';
 import enDict from './locales/en.json';
@@ -250,7 +249,13 @@ export default function App() {
     te: 'Telugu',
     ta: 'Tamil'
   }[activeLang] || 'English';
-  const { t, i18n } = useTranslation();
+  const tFunc = (prop) => dictionaries[activeLang]?.[prop] || dictionaries['en']?.[prop] || prop;
+  const t = new Proxy(tFunc, {
+    get: (target, prop) => {
+      if (prop === '$$typeof') return undefined; // React internal compatibility
+      return target(prop);
+    }
+  });
   const getTodayDateStr = () => {
     const d = new Date();
     return `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, '0')}${String(d.getDate()).padStart(2, '0')}`;
@@ -1178,7 +1183,6 @@ export default function App() {
   };
   const handleLanguageChange = async lang => {
     const code = lang.toLowerCase();
-    i18n.changeLanguage(code);
     localStorage.setItem('vitascan_lang', code);
     if (user) {
       setUser(prev => prev ? {
