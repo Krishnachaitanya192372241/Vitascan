@@ -190,5 +190,11 @@
   "dynamic_health_score_coach": "हटाएँ",
   "your_current_average_rating_is": "स्वास्थ्य रेटिंग:",
   "no_meals_logged_today_use_scan": "आज कोई भोजन लॉग नहीं किया गया.सामग्री का मूल्यांकन करने और रेटिंग भरने के लिए स्कैनर का उपयोग करें।",
-  "close_advisor": "भोजन का नाम"
+  "close_advisor": "भोजन का नाम",
+  "diabetes": "इमोजी आइकन",
+  "bp": "कैलोरी (किलो कैलोरी)",
+  "thyroid": "प्रोटीन (जी)",
+  "high_cholesterol": "कार्ब्स (जी)",
+  "pcos": "वसा (जी)",
+  "pregnancy": "आहार प्राथमिकता"
 }

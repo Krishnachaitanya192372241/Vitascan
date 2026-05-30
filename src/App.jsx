@@ -1774,7 +1774,7 @@ export default function App() {
                     }} />
                           <span style={{
                       color: isChecked ? 'var(--primary)' : 'var(--text-main)'
-                    }}>{cond}</span>
+                    }}>{t(cond.toLowerCase().replace(' ', '_'))}</span>
                         </label>;
                 })}
                   </div>
@@ -3210,42 +3210,8 @@ export default function App() {
                     }} />
                           <span style={{
                       color: 'var(--text-main)'
-                    }}>{cond}</span>
+                    }}>{t(cond.toLowerCase().replace(' ', '_'))}</span>
                         </label>;
-                })}
-                  </div>
-                </div>
-
-                <div>
-                  <label className="input-label">{t("food_allergies_intolerances")}</label>
-                  <div style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '8px',
-                marginTop: '12px'
-              }}>
-                    {['Gluten', 'Dairy', 'Peanuts', 'Tree Nuts', 'Shellfish', 'Soy', 'Eggs'].map(allergy => {
-                  const currentAllergies = onboarding.allergies ? onboarding.allergies.split(',').map(a => a.trim()).filter(a => a) : [];
-                  const isSelected = currentAllergies.includes(allergy);
-                  return <button key={allergy} type="button" onClick={() => {
-                    let newAllergies = [...currentAllergies];
-                    if (isSelected) newAllergies = newAllergies.filter(a => a !== allergy);else newAllergies.push(allergy);
-                    setOnboarding({
-                      ...onboarding,
-                      allergies: newAllergies.join(', ')
-                    });
-                  }} style={{
-                    padding: '8px 16px',
-                    borderRadius: '20px',
-                    border: isSelected ? '1px solid var(--primary)' : '1px solid rgba(255,255,255,0.1)',
-                    background: isSelected ? 'var(--primary-glow)' : 'transparent',
-                    color: isSelected ? 'var(--primary)' : 'var(--text-muted)',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s',
-                    fontSize: '0.9rem'
-                  }}>
-                          {allergy}
-                        </button>;
                 })}
                   </div>
                 </div>
