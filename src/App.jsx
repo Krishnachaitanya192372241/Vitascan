@@ -192,7 +192,7 @@ export default function App() {
 
   // Forms
   const [authForm, setAuthForm] = useState({ name: '', email: '', password: '', isSignup: false });
-  const [onboarding, setOnboarding] = useState({ goal: 'Lose Weight', conditions: [], allergies: '', name: '', age: 25, height: 170, weight: 70, targetWeight: 65, activity: 'Moderate', dietPreference: 'Balanced' });
+  const [onboarding, setOnboarding] = useState({ goal: 'Lose Weight', conditions: [], allergies: '', name: '', gender: 'Male', age: 25, height: 170, weight: 70, targetWeight: 65, activity: 'Moderate', dietPreference: 'Balanced' });
   const [onboardingStep, setOnboardingStep] = useState(1);
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(true);
@@ -1357,16 +1357,26 @@ export default function App() {
                   Step 1: Basic Information
                 </h3>
                 
-                <div>
-                  <label className="input-label">Your Name</label>
-                  <input 
-                    type="text" 
-                    required 
-                    className="form-input" 
-                    placeholder="e.g. Krish"
-                    value={onboarding.name} 
-                    onChange={e => setOnboarding({...onboarding, name: e.target.value})} 
-                  />
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                  <div>
+                    <label className="input-label">Your Name</label>
+                    <input 
+                      type="text" 
+                      required 
+                      className="form-input" 
+                      placeholder="e.g. Krish"
+                      value={onboarding.name} 
+                      onChange={e => setOnboarding({...onboarding, name: e.target.value})} 
+                    />
+                  </div>
+                  <div>
+                    <label className="input-label">Gender</label>
+                    <select className="form-select" value={onboarding.gender} onChange={e => setOnboarding({...onboarding, gender: e.target.value})}>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
@@ -1476,7 +1486,8 @@ export default function App() {
                 <div>
                   <label className="input-label" style={{ marginBottom: '8px', display: 'block' }}>Active Health Conditions</label>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
-                    {['Diabetes', 'BP', 'PCOS', 'Thyroid', 'High Cholesterol'].map(cond => {
+                    {['Diabetes', 'BP', 'Thyroid', 'High Cholesterol', 'PCOS', 'Pregnancy'].map(cond => {
+                      if ((cond === 'PCOS' || cond === 'Pregnancy') && onboarding.gender !== 'Female') return null;
                       const isChecked = onboarding.conditions.includes(cond);
                       return (
                         <label key={cond} style={{ 
@@ -1495,40 +1506,6 @@ export default function App() {
                           <span style={{ color: isChecked ? 'var(--primary)' : 'var(--text-main)' }}>{cond}</span>
                         </label>
                       );
-                    })}
-                  </div>
-                </div>
-
-                <div>
-                  <label className="input-label">Food Allergies & Intolerances</label>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '12px' }}>
-                    {['Gluten', 'Dairy', 'Peanuts', 'Tree Nuts', 'Shellfish', 'Soy', 'Eggs'].map(allergy => {
-                      const currentAllergies = onboarding.allergies ? onboarding.allergies.split(',').map(a => a.trim()).filter(a => a) : [];
-                      const isSelected = currentAllergies.includes(allergy);
-                      return (
-                        <button 
-                          key={allergy} 
-                          type="button"
-                          onClick={() => {
-                            let newAllergies = [...currentAllergies];
-                            if (isSelected) newAllergies = newAllergies.filter(a => a !== allergy);
-                            else newAllergies.push(allergy);
-                            setOnboarding({...onboarding, allergies: newAllergies.join(', ')});
-                          }}
-                          style={{
-                            padding: '8px 16px',
-                            borderRadius: '20px',
-                            border: isSelected ? '1px solid var(--primary)' : '1px solid rgba(255,255,255,0.1)',
-                            background: isSelected ? 'var(--primary-glow)' : 'transparent',
-                            color: isSelected ? 'var(--primary)' : 'var(--text-muted)',
-                            cursor: 'pointer',
-                            transition: 'all 0.2s',
-                            fontSize: '0.9rem'
-                          }}
-                        >
-                          {allergy}
-                        </button>
-                      )
                     })}
                   </div>
                 </div>
