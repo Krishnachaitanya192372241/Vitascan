@@ -1074,9 +1074,9 @@ export default function App() {
         Do NOT add commentary.
         Do NOT add headings.
         Output must be a single valid JSON object matching this exact schema:
-        {"coachAdvice": "Clinical recommendations summary under 100 words", "days": [{"dayName": "Mon", "meals": [{"time": "08:30 AM", "name": "Unique meal name", "calories": 400, "protein": 20, "carbs": 40, "fat": 15, "desc": "description", "imgKey": "oats"}]}]}
+        {"coachAdvice": "Clinical recommendations summary under 100 words", "days": [{"dayName": "Mon", "meals": [{"time": "08:30 AM", "name": "Unique meal name", "calories": 400, "protein": 20, "carbs": 40, "fat": 15, "desc": "description", "imgKey": "english search phrase for photo"}]}]}
         
-        CRITICAL INSTRUCTION: You MUST generate your ENTIRE response (meal names, descriptions, coach advice, day names, etc.) exclusively in the ${currentLanguageName} language.
+        CRITICAL INSTRUCTION: You MUST generate your ENTIRE response (meal names, descriptions, coach advice, day names, etc.) exclusively in the ${currentLanguageName} language. HOWEVER, the "imgKey" field MUST ALWAYS BE IN ENGLISH (1-3 words) so we can search for a stock photo.
       `;
       const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`, {
         method: 'POST',
@@ -1153,7 +1153,7 @@ export default function App() {
             }
 
             // Dynamically fetch actual high-quality food image
-            const pexelsRes = await fetchPexelsImage(modifiedMeal.name);
+            const pexelsRes = await fetchPexelsImage(modifiedMeal.imgKey || modifiedMeal.name);
             modifiedMeal.img = pexelsRes.url;
             modifiedMeal.isCached = pexelsRes.isCached;
             return modifiedMeal;
