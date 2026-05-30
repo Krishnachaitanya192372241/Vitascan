@@ -1995,14 +1995,7 @@ export default function App() {
                     {scanResult.advice}
                   </p>
                   
-                  <h3 style={{ marginTop: '24px', marginBottom: '12px' }}>Estimated Ingredients</h3>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                    {scanResult.ingredients?.map((ing, i) => (
-                      <span key={i} style={{ padding: '6px 12px', background: 'rgba(255,255,255,0.04)', border: '1px solid var(--border-color)', borderRadius: '8px', fontSize: '0.85rem' }}>
-                        {ing}
-                      </span>
-                    ))}
-                  </div>
+
                 </div>
 
                 {/* Add options */}
