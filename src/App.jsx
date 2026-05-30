@@ -210,7 +210,22 @@ export default function App() {
 
   // Plan States
   const [planStatus, setPlanStatus] = useState('idle');
-  const [dietPlan, setDietPlan] = useState(null);
+  const [dietPlan, setDietPlan] = useState(() => {
+    try {
+      const saved = localStorage.getItem('vitascan_diet_plan');
+      return saved ? JSON.parse(saved) : null;
+    } catch {
+      return null;
+    }
+  });
+
+  useEffect(() => {
+    if (dietPlan === null) {
+      localStorage.removeItem('vitascan_diet_plan');
+    } else {
+      localStorage.setItem('vitascan_diet_plan', JSON.stringify(dietPlan));
+    }
+  }, [dietPlan]);
 
   const activeLang = (user?.preferredLanguage || localStorage.getItem('vitascan_lang') || 'en').toLowerCase();
   const currentLanguageName = { en: 'English', hi: 'Hindi', te: 'Telugu', ta: 'Tamil' }[activeLang] || 'English';
