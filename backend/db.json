@@ -1,0 +1,81 @@
+{
+  "users": {
+    "id": 1,
+    "name": "krishna",
+    "age": 1,
+    "height": 170,
+    "weight": 90,
+    "targetWeight": 65,
+    "activityLevel": "Moderate",
+    "goal": "Lose Weight",
+    "healthConditions": "",
+    "preferredLanguage": "EN",
+    "dailyCalorieTarget": 2199,
+    "isLoggedIn": false
+  },
+  "meals": [
+    {
+      "id": 1,
+      "name": "banana shake",
+      "emoji": "🍛",
+      "calories": 100,
+      "protein": 10,
+      "carbs": 30,
+      "fat": 8,
+      "mealType": "Breakfast",
+      "healthScore": 7,
+      "timestamp": 1780048754462
+    },
+    {
+      "id": 2,
+      "name": "tomato rice",
+      "emoji": "🍛",
+      "calories": 150,
+      "protein": 10,
+      "carbs": 111,
+      "fat": 100,
+      "mealType": "Lunch",
+      "healthScore": 7,
+      "timestamp": 1780048784253
+    },
+    {
+      "id": 3,
+      "name": "chaptathi 5",
+      "emoji": "🍛",
+      "calories": 1200,
+      "protein": 10,
+      "carbs": 30,
+      "fat": 8,
+      "mealType": "Dinner",
+      "healthScore": 7,
+      "timestamp": 1780048806114
+    },
+    {
+      "id": 4,
+      "name": "pav baji",
+      "emoji": "🍛",
+      "calories": 200,
+      "protein": 10,
+      "carbs": 30,
+      "fat": 8,
+      "mealType": "Snack",
+      "healthScore": 7,
+      "timestamp": 1780048827292
+    }
+  ],
+  "weight_records": [
+    {
+      "id": 1,
+      "weight": 70,
+      "timestamp": 1780047575069
+    },
+    {
+      "id": 2,
+      "weight": 90,
+      "timestamp": 1780047578715
+    }
+  ],
+  "water_logs": {
+    "20260529": 0.25
+  }
+}
