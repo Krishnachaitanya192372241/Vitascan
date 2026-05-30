@@ -1181,6 +1181,52 @@ export default function App() {
       setPlanStatus('idle');
     }
   };
+
+  const translateExistingData = async (code) => {
+    if (!dietPlan || !apiKey) return;
+    try {
+      const languageMap = { en: 'English', hi: 'Hindi', te: 'Telugu', ta: 'Tamil' };
+      const targetName = languageMap[code] || 'English';
+      if (dietPlan._lang === code) return; 
+
+      setPlanStatus('loading');
+      const prompt = `
+        You are a translation agent. Strictly translate all the text in the following JSON to ${targetName}.
+        Keep ALL JSON keys exactly as they are.
+        CRITICAL: The "imgKey" fields MUST remain completely untouched and identical to the original.
+        Only translate "coachAdvice", "dayName", "name", and "desc".
+        Output ONLY the raw translated JSON without any markdown or code blocks.
+        
+        Original JSON:
+        ${JSON.stringify(dietPlan)}
+      `;
+
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: { responseMimeType: "application/json", temperature: 0.1 }
+        })
+      });
+      
+      const resData = await response.json();
+      const rawText = resData.candidates?.[0]?.content?.parts?.[0]?.text;
+      
+      if (rawText) {
+          let clean = rawText.trim();
+          if (clean.startsWith("\`\`\`json")) clean = clean.replace(/^\`\`\`json\\n?/, '').replace(/\\n?\`\`\`$/, '').trim();
+          let newPlan = JSON.parse(clean);
+          newPlan._lang = code;
+          setDietPlan(newPlan);
+          localStorage.setItem('vitascan_diet_plan', JSON.stringify(newPlan));
+      }
+    } catch (e) {
+      console.error("Auto-translation failed:", e);
+    } finally {
+      setPlanStatus('idle');
+    }
+  };
   const handleLanguageChange = async lang => {
     const code = lang.toLowerCase();
     localStorage.setItem('vitascan_lang', code);
@@ -1190,6 +1236,9 @@ export default function App() {
         preferredLanguage: code
       } : null);
     }
+    
+    // Auto-translate the existing diet plan so photos don't change
+    translateExistingData(code);
     try {
       if (user?.id) {
         const {
