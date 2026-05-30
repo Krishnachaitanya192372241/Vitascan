@@ -1974,11 +1974,11 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* Pros & Cons list grid */}
+                {/* Advantages & Disadvantages list grid */}
                 <div className="grid-2">
                   <div className="glass-card">
                     <h4 style={{ color: 'var(--secondary)', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                      <ThumbsUp size={16} /> Pros
+                      <ThumbsUp size={16} /> Advantages
                     </h4>
                     <ul className="bullet-list">
                       {scanResult.pros?.map((p, i) => (
@@ -1992,7 +1992,7 @@ export default function App() {
 
                   <div className="glass-card">
                     <h4 style={{ color: '#EF4444', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                      <ThumbsDown size={16} /> Cons
+                      <ThumbsDown size={16} /> Disadvantages
                     </h4>
                     <ul className="bullet-list">
                       {scanResult.cons?.map((c, i) => (
