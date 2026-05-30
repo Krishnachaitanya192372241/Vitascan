@@ -3324,9 +3324,9 @@ export default function App() {
                 code: 'TA',
                 name: 'தமிழ் (Tamil)'
               }].map(lang => <button key={lang.code} className="btn" style={{
-                background: activeLang === lang.code ? 'var(--primary)' : 'rgba(0,0,0,0.02)',
-                border: activeLang === lang.code ? 'none' : '1px solid var(--border-color)',
-                color: activeLang === lang.code ? '#FFFFFF' : 'var(--text-main)',
+                background: activeLang === lang.code.toLowerCase() ? 'var(--primary)' : 'rgba(0,0,0,0.02)',
+                border: activeLang === lang.code.toLowerCase() ? 'none' : '1px solid var(--border-color)',
+                color: activeLang === lang.code.toLowerCase() ? '#FFFFFF' : 'var(--text-main)',
                 fontSize: '0.85rem'
               }} onClick={() => handleLanguageChange(lang.code)}>
                       <Globe size={14} /> {lang.name}
