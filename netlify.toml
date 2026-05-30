@@ -1,0 +1,12 @@
+## Netlify build configuration
+# This file lives at the repository root.
+# Netlify will run the build command below and publish the `dist` folder.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Redirect all routes to index.html for the SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

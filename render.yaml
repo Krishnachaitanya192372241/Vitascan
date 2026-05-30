@@ -1,0 +1,7 @@
+services:
+  - type: static
+    name: vitascan
+    env: node
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    # Add any public env vars here (e.g., VITE_SUPABASE_URL). Secrets go in the Render UI.
