@@ -162,7 +162,7 @@ export default function App() {
   const [meals, setMeals] = useState([]);
   const [weightRecords, setWeightRecords] = useState([]);
   const [waterLiters, setWaterLiters] = useState(0.0);
-  const [apiKey, setApiKey] = useState('AQ.Ab8RN6L-H0r2GT-GLCmYr9kSfmw75aKPsMBJZdHC7XPfwuqvsA');
+  const [apiKey, setApiKey] = useState('');
   
   // Modals & Popups
   const [showAddMealModal, setShowAddMealModal] = useState(false);
