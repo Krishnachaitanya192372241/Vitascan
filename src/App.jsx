@@ -242,13 +242,16 @@ export default function App() {
       localStorage.setItem('vitascan_diet_plan', JSON.stringify(dietPlan));
     }
   }, [dietPlan]);
-  const activeLang = (user?.preferredLanguage || localStorage.getItem('vitascan_lang') || 'en').toLowerCase();
+  const [appLang, setAppLang] = useState(() => localStorage.getItem('vitascan_lang') || 'en');
+  const activeLang = (user?.preferredLanguage || appLang).toLowerCase();
+  
   const currentLanguageName = {
     en: 'English',
     hi: 'Hindi',
     te: 'Telugu',
     ta: 'Tamil'
   }[activeLang] || 'English';
+
   const tFunc = (prop) => dictionaries[activeLang]?.[prop] || dictionaries['en']?.[prop] || prop;
   const t = new Proxy(tFunc, {
     get: (target, prop) => {
@@ -1230,6 +1233,7 @@ export default function App() {
   const handleLanguageChange = async lang => {
     const code = lang.toLowerCase();
     localStorage.setItem('vitascan_lang', code);
+    setAppLang(code);
     if (user) {
       setUser(prev => prev ? {
         ...prev,
