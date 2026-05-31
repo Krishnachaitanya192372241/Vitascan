@@ -2,16 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Plus, Trash2, Camera, Sparkles, Info, Globe, LayoutDashboard, Calendar, Activity, LogOut, Sliders, Droplet, Award, TrendingUp, Settings as SettingsIcon, ThumbsUp, ThumbsDown, Moon, Sun, FileText, Eye, EyeOff, HeartPulse, Check } from 'lucide-react';
 import { supabase } from './supabaseClient';
 const API_BASE = 'https://vitascan-backend-9ehb.onrender.com/api';
-import enDict from './locales/en.json';
-import hiDict from './locales/hi.json';
-import teDict from './locales/te.json';
-import taDict from './locales/ta.json';
-const dictionaries = {
-  en: enDict,
-  hi: hiDict,
-  te: teDict,
-  ta: taDict
-};
+import { useTranslation } from 'react-i18next';
 const PEXELS_CACHE = {};
 const normalizeMealName = name => {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
@@ -242,23 +233,16 @@ export default function App() {
       localStorage.setItem('vitascan_diet_plan', JSON.stringify(dietPlan));
     }
   }, [dietPlan]);
-  const [appLang, setAppLang] = useState(() => localStorage.getItem('vitascan_lang') || 'en');
-  const activeLang = (user?.preferredLanguage || appLang).toLowerCase();
+  const { t, i18n } = useTranslation();
   
+  // Also keep currentLanguageName for Gemini prompts
+  const activeLang = i18n.language || 'en';
   const currentLanguageName = {
     en: 'English',
     hi: 'Hindi',
     te: 'Telugu',
     ta: 'Tamil'
   }[activeLang] || 'English';
-
-  const tFunc = (prop) => dictionaries[activeLang]?.[prop] || dictionaries['en']?.[prop] || prop;
-  const t = new Proxy(tFunc, {
-    get: (target, prop) => {
-      if (prop === '$$typeof') return undefined; // React internal compatibility
-      return target(prop);
-    }
-  });
   const getTodayDateStr = () => {
     const d = new Date();
     return `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, '0')}${String(d.getDate()).padStart(2, '0')}`;
@@ -1233,7 +1217,7 @@ export default function App() {
   const handleLanguageChange = async lang => {
     const code = lang.toLowerCase();
     localStorage.setItem('vitascan_lang', code);
-    setAppLang(code);
+    i18n.changeLanguage(code);
     if (user) {
       setUser(prev => prev ? {
         ...prev,
@@ -2277,7 +2261,7 @@ export default function App() {
                           <h4 style={{
                       fontSize: '1.05rem',
                       fontWeight: 700
-                    }}>{t[category.toLowerCase()]}</h4>
+                    }}>{t()}</h4>
                           {categoryCal > 0 && <span style={{
                       fontSize: '0.75rem',
                       background: 'var(--primary-glow)',

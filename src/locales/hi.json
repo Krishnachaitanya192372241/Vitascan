@@ -1,9 +1,9 @@
 {
-  "home": "Dashboard",
-  "scan": "AI Scanner",
-  "plan": "Plan",
+  "home": "डैशबोर्ड",
+  "scan": "एआई स्कैनर",
+  "plan": "डाइट प्लानर",
   "reports": "Weight Analytics",
-  "settings": "Settings",
+  "settings": "सेटिंग्स",
   "today_meals": "Today's Logged Meals",
   "breakfast": "Breakfast",
   "lunch": "Lunch",
