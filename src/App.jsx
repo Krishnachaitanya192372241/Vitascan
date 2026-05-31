@@ -670,7 +670,7 @@ export default function App() {
       }
       if (error) {
         if (error.message.includes('row-level security') || error.message.includes('RLS') || error.message.includes('violates')) {
-          alert("Unable to save profile. Please sign in again and try.");
+          alert(t("alert_save_profile"));
         } else {
           alert("Error saving onboarding details: " + error.message);
         }
@@ -829,11 +829,11 @@ export default function App() {
   });
   const handleScanFood = async () => {
     if (scanTab === 'camera' && !scanImage) {
-      alert("Please upload a food photo before analyzing.");
+      alert(t("alert_upload_photo"));
       return;
     }
     if (scanTab === 'text' && !scanInput.trim()) {
-      alert("Please enter a food description before analyzing.");
+      alert(t("alert_enter_desc"));
       return;
     }
     setScanStatus('loading');
@@ -868,7 +868,8 @@ export default function App() {
           "possibleMatches": []
         }
         
-        CRITICAL INSTRUCTION: You MUST generate your ENTIRE response (foodName, pros, cons, ingredients, advice, etc.) exclusively in the ${currentLanguageName} language.
+        SELECTED LANGUAGE: ${currentLanguageName}
+        CRITICAL INSTRUCTION: You MUST generate your ENTIRE response (foodName, pros, cons, ingredients, advice, titles, recommendations, etc.) EXCLUSIVELY and ENTIRELY in ${currentLanguageName}. Do NOT return any English unless the selected language is English. There should be ZERO mixed-language output.
       `;
       let parts = [];
       if (scanTab === 'camera' && scanImage) {
@@ -999,7 +1000,7 @@ export default function App() {
       // Filter timestamps to only those within the last hour
       timestamps = timestamps.filter(ts => now - ts < oneHour);
       if (timestamps.length >= 3) {
-        alert("You have reached the limit of 3 diet plan regenerations per hour. Please try again later.");
+        alert(t("alert_limit_reached"));
         return;
       }
       timestamps.push(now);
@@ -1010,7 +1011,7 @@ export default function App() {
     const activeUser = overrideUser || user;
     const calTarget = activeUser?.dailyCalorieTarget || 2000;
     if (!hasKey) {
-      alert("Please configure a valid Gemini API key to generate a true AI diet plan. Offline mock plans have been disabled to ensure single source of truth.");
+      alert(t("alert_api_key"));
       setPlanStatus('idle');
       return;
     }
@@ -1063,7 +1064,9 @@ export default function App() {
         Output must be a single valid JSON object matching this exact schema:
         {"coachAdvice": "Clinical recommendations summary under 100 words", "days": [{"dayName": "Mon", "meals": [{"time": "08:30 AM", "name": "Unique meal name", "calories": 400, "protein": 20, "carbs": 40, "fat": 15, "desc": "description", "imgKey": "english search phrase for photo"}]}]}
         
-        CRITICAL INSTRUCTION: You MUST generate your ENTIRE response (meal names, descriptions, coach advice, day names, etc.) exclusively in the ${currentLanguageName} language. HOWEVER, the "imgKey" field MUST ALWAYS BE IN ENGLISH (1-3 words) so we can search for a stock photo.
+        SELECTED LANGUAGE: ${currentLanguageName}
+        CRITICAL INSTRUCTION: You MUST generate your ENTIRE response (meal names, descriptions, coach advice, day names, recommendations, clinical advice, titles, etc.) EXCLUSIVELY and ENTIRELY in ${currentLanguageName}. Do NOT return any English unless the selected language is English. There should be ZERO mixed-language output.
+        HOWEVER, the "imgKey" field MUST ALWAYS BE IN ENGLISH (1-3 words) so we can search for a stock photo.
       `;
       const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`, {
         method: 'POST',
@@ -1180,8 +1183,8 @@ export default function App() {
       const prompt = `
         You are a translation agent. Strictly translate all the text in the following JSON to ${targetName}.
         Keep ALL JSON keys exactly as they are.
-        CRITICAL: The "imgKey" fields MUST remain completely untouched and identical to the original.
-        Only translate "coachAdvice", "dayName", "name", and "desc".
+        CRITICAL: The "imgKey" fields MUST remain completely untouched and identical to the original (always English).
+        Only translate "coachAdvice", "dayName", "name", and "desc". Ensure these fields are ENTIRELY translated into ${targetName} without any English mixed in.
         Output ONLY the raw translated JSON without any markdown or code blocks.
         
         Original JSON:
@@ -1478,7 +1481,7 @@ export default function App() {
         }}>
             {authForm.isSignup && <div className="auth-form-group">
                 <label className="input-label">{t("display_name")}</label>
-                <input type="text" required className="form-input" placeholder="e.g. Krish" value={authForm.name} onChange={e => setAuthForm({
+                <input type="text" required className="form-input" placeholder={t("placeholder_name")} value={authForm.name} onChange={e => setAuthForm({
               ...authForm,
               name: e.target.value
             })} disabled={isAuthLoading} />
@@ -1486,7 +1489,7 @@ export default function App() {
 
             <div className="auth-form-group">
               <label className="input-label">{t("email_address")}</label>
-              <input type="email" required className="form-input" placeholder="krish@example.com" value={authForm.email} onChange={e => setAuthForm({
+              <input type="email" required className="form-input" placeholder={t("placeholder_email")} value={authForm.email} onChange={e => setAuthForm({
               ...authForm,
               email: e.target.value
             })} disabled={isAuthLoading} />
@@ -1495,7 +1498,7 @@ export default function App() {
             <div className="auth-form-group">
               <label className="input-label">{t("password")}</label>
               <div className="password-input-wrapper">
-                <input type={showPassword ? "text" : "password"} required className="form-input" placeholder="••••••••" value={authForm.password} onChange={e => setAuthForm({
+                <input type={showPassword ? "text" : "password"} required className="form-input" placeholder={t("placeholder_password")} value={authForm.password} onChange={e => setAuthForm({
                 ...authForm,
                 password: e.target.value
               })} disabled={isAuthLoading} style={{
@@ -1672,7 +1675,7 @@ export default function App() {
             }}>
                   <div>
                     <label className="input-label">{t("age_years")}</label>
-                    <input type="number" required min="1" max="120" className="form-input" placeholder="e.g. 25" value={onboarding.age} onChange={e => setOnboarding({
+                    <input type="number" required min="1" max="120" className="form-input" placeholder={t("placeholder_age")} value={onboarding.age} onChange={e => setOnboarding({
                   ...onboarding,
                   age: e.target.value === '' ? '' : parseInt(e.target.value)
                 })} />
@@ -1713,21 +1716,21 @@ export default function App() {
             }}>
                   <div>
                     <label className="input-label">{t("height_cm")}</label>
-                    <input type="number" required min="50" max="280" className="form-input" placeholder="e.g. 170" value={onboarding.height} onChange={e => setOnboarding({
+                    <input type="number" required min="50" max="280" className="form-input" placeholder={t("placeholder_height")} value={onboarding.height} onChange={e => setOnboarding({
                   ...onboarding,
                   height: e.target.value === '' ? '' : parseFloat(e.target.value)
                 })} />
                   </div>
                   <div>
                     <label className="input-label">{t("weight_kg")}</label>
-                    <input type="number" required min="20" max="300" className="form-input" placeholder="e.g. 70" value={onboarding.weight} onChange={e => setOnboarding({
+                    <input type="number" required min="20" max="300" className="form-input" placeholder={t("placeholder_weight")} value={onboarding.weight} onChange={e => setOnboarding({
                   ...onboarding,
                   weight: e.target.value === '' ? '' : parseFloat(e.target.value)
                 })} />
                   </div>
                   <div>
                     <label className="input-label">{t("target_weight_kg")}</label>
-                    <input type="number" required min="20" max="300" className="form-input" placeholder="e.g. 65" value={onboarding.targetWeight} onChange={e => setOnboarding({
+                    <input type="number" required min="20" max="300" className="form-input" placeholder={t("placeholder_target")} value={onboarding.targetWeight} onChange={e => setOnboarding({
                   ...onboarding,
                   targetWeight: e.target.value === '' ? '' : parseFloat(e.target.value)
                 })} />
@@ -2410,7 +2413,7 @@ export default function App() {
 
                 {scanTab === 'text' && <div>
                     <label className="input-label">{t("type_meal_details")}</label>
-                    <input type="text" className="form-input" placeholder="e.g. 2 Paneer Parathas and a cup of low-fat yoghurt..." value={scanInput} onChange={e => setScanInput(e.target.value)} />
+                    <input type="text" className="form-input" placeholder={t("placeholder_meal_scan")} value={scanInput} onChange={e => setScanInput(e.target.value)} />
                     <button className="btn btn-primary" style={{
               marginTop: '16px',
               width: '100%'
@@ -2828,7 +2831,7 @@ export default function App() {
               display: 'flex',
               gap: '12px'
             }}>
-                  <input type="number" step="0.1" name="weightInput" required className="form-input" placeholder="Weight in kg (e.g. 70.5)" />
+                  <input type="number" step="0.1" name="weightInput" required className="form-input" placeholder={t("placeholder_weight_entry")} />
                   <button type="submit" className="btn btn-primary" style={{
                 whiteSpace: 'nowrap'
               }}>{t("save_record")}</button>
@@ -3361,7 +3364,7 @@ export default function App() {
         }}>
               <div>
                 <label className="input-label">{t("meal_name")}</label>
-                <input type="text" required className="form-input" placeholder="e.g. Oats with Banana" value={manualMeal.name} onChange={e => setManualMeal({
+                <input type="text" required className="form-input" placeholder={t("placeholder_meal_name")} value={manualMeal.name} onChange={e => setManualMeal({
               ...manualMeal,
               name: e.target.value
             })} />
@@ -3377,7 +3380,7 @@ export default function App() {
                 </div>
                 <div>
                   <label className="input-label">{t("calories_kcal")}</label>
-                  <input type="number" required className="form-input" placeholder="e.g. 350" value={manualMeal.calories} onChange={e => setManualMeal({
+                  <input type="number" required className="form-input" placeholder={t("placeholder_calories")} value={manualMeal.calories} onChange={e => setManualMeal({
                 ...manualMeal,
                 calories: e.target.value
               })} />
@@ -3497,7 +3500,7 @@ export default function App() {
           display: 'flex',
           gap: '10px'
         }}>
-              <input type="number" step="0.05" className="form-input" placeholder="Custom liters (e.g. 0.45)" value={customWater} onChange={e => setCustomWater(e.target.value)} />
+              <input type="number" step="0.05" className="form-input" placeholder={t("placeholder_water")} value={customWater} onChange={e => setCustomWater(e.target.value)} />
               <button className="btn btn-primary" onClick={() => {
             const val = parseFloat(customWater);
             if (val > 0) {
