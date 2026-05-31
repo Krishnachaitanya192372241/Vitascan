@@ -1895,29 +1895,29 @@ export default function App() {
 
         <nav className="sidebar-links">
           <button className={`sidebar-btn ${activeTab === 'dashboard' ? 'active' : ''}`} onClick={() => setActiveTab('dashboard')}>
-            <LayoutDashboard size={18} /> {t.home}
+            <LayoutDashboard size={18} /> {t("home")}
           </button>
           <button className={`sidebar-btn ${activeTab === 'scan' ? 'active' : ''}`} onClick={() => {
           setActiveTab('scan');
           setScanStatus('idle');
           setScanResult(null);
         }}>
-            <Camera size={18} /> {t.scan}
+            <Camera size={18} /> {t("scan")}
           </button>
           <button className={`sidebar-btn ${activeTab === 'plan' ? 'active' : ''}`} onClick={() => {
           setActiveTab('plan');
           handleGenerateDietPlan();
         }}>
-            <Calendar size={18} /> {t.plan}
+            <Calendar size={18} /> {t("plan")}
           </button>
           <button className={`sidebar-btn ${activeTab === 'reports' ? 'active' : ''}`} onClick={() => setActiveTab('reports')}>
-            <Activity size={18} /> {t.reports}
+            <Activity size={18} /> {t("reports")}
           </button>
           <button className={`sidebar-btn ${activeTab === 'settings' ? 'active' : ''}`} onClick={() => {
           setActiveTab('settings');
           fetchUser();
         }}>
-            <Sliders size={18} /> {t.settings}
+            <Sliders size={18} /> {t("settings")}
           </button>
         </nav>
 
@@ -2225,7 +2225,7 @@ export default function App() {
             <div className="glass-card">
               <h3 style={{
             marginBottom: '20px'
-          }}>{t.today_meals}</h3>
+          }}>{t("today_meals")}</h3>
               <p style={{
             color: 'yellow',
             marginBottom: '10px'
@@ -2261,7 +2261,7 @@ export default function App() {
                           <h4 style={{
                       fontSize: '1.05rem',
                       fontWeight: 700
-                    }}>{t()}</h4>
+                    }}>{t(category.toLowerCase())}</h4>
                           {categoryCal > 0 && <span style={{
                       fontSize: '0.75rem',
                       background: 'var(--primary-glow)',
@@ -2342,12 +2342,12 @@ export default function App() {
               <h1 style={{
             fontSize: '2.5rem',
             marginTop: '8px'
-          }}>{t.scan_title}</h1>
+          }}>{t("scan_title")}</h1>
               <p style={{
             marginTop: '8px',
             maxWidth: '600px',
             margin: '8px auto 0 auto'
-          }}>{t.scan_desc}</p>
+          }}>{t("scan_desc")}</p>
             </div>
 
             {scanStatus === 'idle' && <div className="glass-card" style={{
@@ -2437,7 +2437,7 @@ export default function App() {
           }}>
                   <Sparkles size={36} color="var(--primary)" />
                 </div>
-                <h3>{t.analyzing}</h3>
+                <h3>{t("analyzing")}</h3>
                 <p>{t("generating_nutrition_score_mat")}</p>
               </div>}
 
