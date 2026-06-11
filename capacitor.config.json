@@ -1,5 +1,10 @@
 {
   "appId": "com.vitascan.app",
   "appName": "vitascan",
-  "webDir": "dist"
+  "webDir": "dist",
+  "plugins": {
+    "CapacitorHttp": {
+      "enabled": true
+    }
+  }
 }

@@ -888,7 +888,7 @@ export default function App() {
           text: `Analyze the meal: ${scanInput}`
         });
       }
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`, {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -1068,7 +1068,7 @@ export default function App() {
         CRITICAL INSTRUCTION: You MUST generate your ENTIRE response (meal names, descriptions, coach advice, day names, recommendations, clinical advice, titles, etc.) EXCLUSIVELY and ENTIRELY in ${currentLanguageName}. Do NOT return any English unless the selected language is English. There should be ZERO mixed-language output.
         HOWEVER, the "imgKey" field MUST ALWAYS BE IN ENGLISH (1-3 words) so we can search for a stock photo.
       `;
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`, {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -1191,7 +1191,7 @@ export default function App() {
         ${JSON.stringify(dietPlan)}
       `;
 
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`, {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -1489,7 +1489,7 @@ export default function App() {
 
             <div className="auth-form-group">
               <label className="input-label">{t("email_address")}</label>
-              <input type="email" required className="form-input" placeholder={t("placeholder_email")} value={authForm.email} onChange={e => setAuthForm({
+              <input type="email" inputMode="email" required className="form-input" placeholder={t("placeholder_email")} value={authForm.email} onChange={e => setAuthForm({
               ...authForm,
               email: e.target.value
             })} disabled={isAuthLoading} />
@@ -1566,7 +1566,7 @@ export default function App() {
       justifyContent: 'center'
     }}>
         <div className="glass-card login-card animate-fade-in" style={{
-        maxWidth: '640px',
+        maxWidth: '100%',
         width: '100%',
         padding: '40px'
       }}>
@@ -1675,7 +1675,7 @@ export default function App() {
             }}>
                   <div>
                     <label className="input-label">{t("age_years")}</label>
-                    <input type="number" required min="1" max="120" className="form-input" placeholder={t("placeholder_age")} value={onboarding.age} onChange={e => setOnboarding({
+                    <input type="number" inputMode="numeric" pattern="[0-9]*" required min="1" max="120" className="form-input" placeholder={t("placeholder_age")} value={onboarding.age} onChange={e => setOnboarding({
                   ...onboarding,
                   age: e.target.value === '' ? '' : parseInt(e.target.value)
                 })} />
@@ -1716,21 +1716,21 @@ export default function App() {
             }}>
                   <div>
                     <label className="input-label">{t("height_cm")}</label>
-                    <input type="number" required min="50" max="280" className="form-input" placeholder={t("placeholder_height")} value={onboarding.height} onChange={e => setOnboarding({
+                    <input type="number" inputMode="numeric" pattern="[0-9]*" required min="50" max="280" className="form-input" placeholder={t("placeholder_height")} value={onboarding.height} onChange={e => setOnboarding({
                   ...onboarding,
                   height: e.target.value === '' ? '' : parseFloat(e.target.value)
                 })} />
                   </div>
                   <div>
                     <label className="input-label">{t("weight_kg")}</label>
-                    <input type="number" required min="20" max="300" className="form-input" placeholder={t("placeholder_weight")} value={onboarding.weight} onChange={e => setOnboarding({
+                    <input type="number" inputMode="numeric" pattern="[0-9]*" required min="20" max="300" className="form-input" placeholder={t("placeholder_weight")} value={onboarding.weight} onChange={e => setOnboarding({
                   ...onboarding,
                   weight: e.target.value === '' ? '' : parseFloat(e.target.value)
                 })} />
                   </div>
                   <div>
                     <label className="input-label">{t("target_weight_kg")}</label>
-                    <input type="number" required min="20" max="300" className="form-input" placeholder={t("placeholder_target")} value={onboarding.targetWeight} onChange={e => setOnboarding({
+                    <input type="number" inputMode="numeric" pattern="[0-9]*" required min="20" max="300" className="form-input" placeholder={t("placeholder_target")} value={onboarding.targetWeight} onChange={e => setOnboarding({
                   ...onboarding,
                   targetWeight: e.target.value === '' ? '' : parseFloat(e.target.value)
                 })} />
@@ -1869,7 +1869,8 @@ export default function App() {
   const pConsumed = todayMeals.reduce((sum, m) => sum + m.protein, 0);
   const cConsumed = todayMeals.reduce((sum, m) => sum + m.carbs, 0);
   const fConsumed = todayMeals.reduce((sum, m) => sum + m.fat, 0);
-  const avgHealth = todayMeals.length > 0 ? (todayMeals.reduce((sum, m) => sum + m.healthScore, 0) / todayMeals.length).toFixed(1) : '8.4';
+  const validHealthMeals = todayMeals.filter(m => typeof m.healthScore === 'number' && !isNaN(m.healthScore));
+  const avgHealth = validHealthMeals.length > 0 ? (validHealthMeals.reduce((sum, m) => sum + m.healthScore, 0) / validHealthMeals.length).toFixed(1) : '0.0';
   return <div className="dashboard-layout">
       
       {/* SIDEBAR NAVIGATION */}
@@ -1961,7 +1962,9 @@ export default function App() {
             <div style={{
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'flex-start'
+          alignItems: 'flex-start',
+          flexWrap: 'wrap',
+          gap: '16px'
         }}>
               <div>
                 <span style={{
@@ -1973,7 +1976,7 @@ export default function App() {
                 <h1 style={{
               fontSize: '2.5rem',
               marginTop: '4px'
-            }}>{t("welcome")}{user.name}!</h1>
+            }}>{t("welcome")} {user.name}!</h1>
               </div>
               
               <div style={{
@@ -2281,7 +2284,7 @@ export default function App() {
                       {categoryMeals.length === 0 ? <div className="empty-dashed-slot" style={{
                   cursor: 'default',
                   opacity: 0.6
-                }}>{t("no_meals_logged_for")}{category}{t("yet")}</div> : <div style={{
+                }}>{t("no_meals_logged_for")} {category} {t("yet")}</div> : <div style={{
                   display: 'flex',
                   flexDirection: 'column',
                   gap: '10px'
@@ -2301,7 +2304,8 @@ export default function App() {
                         gap: '12px',
                         fontSize: '0.8rem',
                         color: 'var(--text-muted)',
-                        marginTop: '2px'
+                        marginTop: '2px',
+                        flexWrap: 'wrap'
                       }}>
                                   <span>{meal.calories}{t("kcal")}</span>
                                   <span>•</span>
@@ -2332,7 +2336,7 @@ export default function App() {
 
         {/* TAB 2: AI SCANNER */}
         {activeTab === 'scan' && <div style={{
-        maxWidth: '800px',
+        maxWidth: '100%',
         margin: '0 auto',
         display: 'flex',
         flexDirection: 'column',
@@ -2348,7 +2352,7 @@ export default function App() {
           }}>{t("scan_title")}</h1>
               <p style={{
             marginTop: '8px',
-            maxWidth: '600px',
+            maxWidth: '100%',
             margin: '8px auto 0 auto'
           }}>{t("scan_desc")}</p>
             </div>
@@ -2831,7 +2835,7 @@ export default function App() {
               display: 'flex',
               gap: '12px'
             }}>
-                  <input type="number" step="0.1" name="weightInput" required className="form-input" placeholder={t("placeholder_weight_entry")} />
+                  <input type="number" inputMode="numeric" pattern="[0-9]*" step="0.1" name="weightInput" required className="form-input" placeholder={t("placeholder_weight_entry")} />
                   <button type="submit" className="btn btn-primary" style={{
                 whiteSpace: 'nowrap'
               }}>{t("save_record")}</button>
@@ -3110,7 +3114,7 @@ export default function App() {
 
         {/* TAB 5: SETTINGS */}
         {activeTab === 'settings' && <div style={{
-        maxWidth: '720px',
+        maxWidth: '100%',
         margin: '0 auto',
         display: 'flex',
         flexDirection: 'column',
@@ -3144,7 +3148,7 @@ export default function App() {
             }}>
                   <div>
                     <label className="input-label">{t("age_years")}</label>
-                    <input type="number" className="form-input" value={onboarding.age} onChange={e => setOnboarding({
+                    <input type="number" inputMode="numeric" pattern="[0-9]*" className="form-input" value={onboarding.age} onChange={e => setOnboarding({
                   ...onboarding,
                   age: e.target.value === '' ? '' : parseInt(e.target.value)
                 })} />
@@ -3169,21 +3173,21 @@ export default function App() {
             }}>
                   <div>
                     <label className="input-label">{t("height_cm")}</label>
-                    <input type="number" className="form-input" value={onboarding.height} onChange={e => setOnboarding({
+                    <input type="number" inputMode="numeric" pattern="[0-9]*" className="form-input" value={onboarding.height} onChange={e => setOnboarding({
                   ...onboarding,
                   height: e.target.value === '' ? '' : parseFloat(e.target.value)
                 })} />
                   </div>
                   <div>
                     <label className="input-label">{t("weight_kg")}</label>
-                    <input type="number" className="form-input" value={onboarding.weight} onChange={e => setOnboarding({
+                    <input type="number" inputMode="numeric" pattern="[0-9]*" className="form-input" value={onboarding.weight} onChange={e => setOnboarding({
                   ...onboarding,
                   weight: e.target.value === '' ? '' : parseFloat(e.target.value)
                 })} />
                   </div>
                   <div>
                     <label className="input-label">{t("target_weight_kg")}</label>
-                    <input type="number" className="form-input" value={onboarding.targetWeight} onChange={e => setOnboarding({
+                    <input type="number" inputMode="numeric" pattern="[0-9]*" className="form-input" value={onboarding.targetWeight} onChange={e => setOnboarding({
                   ...onboarding,
                   targetWeight: e.target.value === '' ? '' : parseFloat(e.target.value)
                 })} />
@@ -3380,7 +3384,7 @@ export default function App() {
                 </div>
                 <div>
                   <label className="input-label">{t("calories_kcal")}</label>
-                  <input type="number" required className="form-input" placeholder={t("placeholder_calories")} value={manualMeal.calories} onChange={e => setManualMeal({
+                  <input type="number" inputMode="numeric" pattern="[0-9]*" required className="form-input" placeholder={t("placeholder_calories")} value={manualMeal.calories} onChange={e => setManualMeal({
                 ...manualMeal,
                 calories: e.target.value
               })} />
@@ -3390,21 +3394,21 @@ export default function App() {
               <div className="grid-3">
                 <div>
                   <label className="input-label">{t("protein_g")}</label>
-                  <input type="number" className="form-input" placeholder="g" value={manualMeal.protein} onChange={e => setManualMeal({
+                  <input type="number" inputMode="numeric" pattern="[0-9]*" className="form-input" placeholder="g" value={manualMeal.protein} onChange={e => setManualMeal({
                 ...manualMeal,
                 protein: e.target.value
               })} />
                 </div>
                 <div>
                   <label className="input-label">{t("carbs_g")}</label>
-                  <input type="number" className="form-input" placeholder="g" value={manualMeal.carbs} onChange={e => setManualMeal({
+                  <input type="number" inputMode="numeric" pattern="[0-9]*" className="form-input" placeholder="g" value={manualMeal.carbs} onChange={e => setManualMeal({
                 ...manualMeal,
                 carbs: e.target.value
               })} />
                 </div>
                 <div>
                   <label className="input-label">{t("fats_g")}</label>
-                  <input type="number" className="form-input" placeholder="g" value={manualMeal.fat} onChange={e => setManualMeal({
+                  <input type="number" inputMode="numeric" pattern="[0-9]*" className="form-input" placeholder="g" value={manualMeal.fat} onChange={e => setManualMeal({
                 ...manualMeal,
                 fat: e.target.value
               })} />
@@ -3500,7 +3504,7 @@ export default function App() {
           display: 'flex',
           gap: '10px'
         }}>
-              <input type="number" step="0.05" className="form-input" placeholder={t("placeholder_water")} value={customWater} onChange={e => setCustomWater(e.target.value)} />
+              <input type="number" inputMode="numeric" pattern="[0-9]*" step="0.05" className="form-input" placeholder={t("placeholder_water")} value={customWater} onChange={e => setCustomWater(e.target.value)} />
               <button className="btn btn-primary" onClick={() => {
             const val = parseFloat(customWater);
             if (val > 0) {
