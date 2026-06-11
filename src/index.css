@@ -248,7 +248,7 @@ body {
   gap: 16px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .grid-2, .grid-3, .grid-4 {
     grid-template-columns: 1fr;
     gap: 16px;
@@ -810,7 +810,7 @@ p {
 
 
 /* FINAL MOBILE LAYOUT FIXES */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   /* Reduce padding drastically on mobile to free up space */
   .main-content {
     padding: 16px 8px !important;
@@ -869,7 +869,7 @@ input, textarea {
   display: none; /* hidden by default on desktop/tablet */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .sidebar {
     display: none !important;
   }
