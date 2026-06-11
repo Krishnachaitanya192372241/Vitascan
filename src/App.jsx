@@ -134,12 +134,7 @@ const FormatAdvice = ({ text }) => {
   if (!text) return null;
   const points = text.split(/(?:\. |\n|- )/).filter(p => p.trim().length > 3);
   return (
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-      gap: '12px',
-      marginTop: '12px'
-    }}>
+    <div className="advice-grid">
       {points.map((p, i) => (
         <div key={i} className="glass-card" style={{ padding: '16px', background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border-color)', borderRadius: '12px', display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
           <span style={{ color: 'var(--primary)', marginTop: '2px' }}><Sparkles size={16}/></span>

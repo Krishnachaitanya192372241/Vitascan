@@ -250,8 +250,8 @@ body {
 
 @media (max-width: 1024px) {
   .grid-2, .grid-3, .grid-4 {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 }
 
@@ -947,6 +947,20 @@ input, textarea {
 @media (max-width: 768px) {
   .calorie-value {
     font-size: 1.8rem;
+  }
+}
+
+
+.advice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+@media (max-width: 1024px) {
+  .advice-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
 }
 
