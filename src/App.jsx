@@ -130,6 +130,23 @@ const calculateMetabolicTargets = profile => {
     waterTarget
   };
 };
+const FormatAdvice = ({ text }) => {
+  if (!text) return null;
+  const points = text.split(/(?:\. |\n|- )/).filter(p => p.trim().length > 3);
+  return (
+    <ul className="bullet-list" style={{ marginTop: '12px' }}>
+      {points.map((p, i) => (
+        <li key={i} className="bullet-item" style={{ marginBottom: '8px' }}>
+          <span className="bullet-dot" style={{ background: 'var(--primary)' }}></span>
+          <span style={{ lineHeight: '1.5', color: 'var(--text-main)', fontSize: '0.95rem' }}>
+            {p.trim()}{p.trim().endsWith('.') || p.trim().endsWith('!') ? '' : '.'}
+          </span>
+        </li>
+      ))}
+    </ul>
+  );
+};
+
 export default function App() {
   const [appState, setAppState] = useState('splash');
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -2642,19 +2659,7 @@ export default function App() {
                 {/* Coach Advice */}
                 <div className="glass-card">
                   <h3>{t("clinical_coach_advice")}</h3>
-                  <p style={{
-              fontSize: '0.95rem',
-              color: 'var(--text-main)',
-              padding: '16px',
-              background: 'rgba(255,255,255,0.01)',
-              borderLeft: '3px solid var(--primary)',
-              borderRadius: '8px',
-              marginTop: '12px',
-              lineHeight: 1.6,
-              whiteSpace: 'pre-line'
-            }}>
-                    {scanResult.advice}
-                  </p>
+                  <FormatAdvice text={scanResult.advice} />
                   
 
                 </div>
@@ -2738,10 +2743,7 @@ export default function App() {
               gap: '8px'
             }}>
                     <Sparkles size={16} />{t("clinical_recommendations")}</h4>
-                  <p style={{
-              color: 'var(--text-main)',
-              whiteSpace: 'pre-line'
-            }}>{dietPlan.coachAdvice}</p>
+                  <FormatAdvice text={dietPlan.coachAdvice} />
                 </div>
 
                 {/* Days layout */}
