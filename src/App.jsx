@@ -1391,27 +1391,70 @@ export default function App() {
       width: '100vw',
       alignItems: 'center',
       justifyContent: 'center',
-      background: '#0B0F19'
+      background: 'linear-gradient(to bottom, #FF6842, #FF4F18)',
+      color: 'white',
+      fontFamily: 'var(--font-sans)'
     }}>
+        <div style={{ flex: 1 }}></div>
+
         <div style={{
-        fontSize: '5rem',
-        marginBottom: '16px',
-        animation: 'pulse-glow 1.5s infinite'
-      }}>🥗</div>
+          background: 'white',
+          borderRadius: '35px',
+          width: '140px',
+          height: '140px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: '4.5rem',
+          boxShadow: '0 0 0 12px rgba(255,255,255,0.2), 0 0 0 24px rgba(255,255,255,0.1)',
+          marginBottom: '50px'
+        }}>
+          🥗
+        </div>
+
         <h1 style={{
-        fontSize: '3rem',
-        fontWeight: 900,
-        color: '#FFFFFF',
-        letterSpacing: '-0.03em'
-      }}>{t("vitascan")}</h1>
+          fontSize: '3.5rem',
+          fontWeight: 900,
+          color: '#FFFFFF',
+          letterSpacing: '-0.02em',
+          marginBottom: '12px'
+        }}>VitaScan</h1>
+
         <p style={{
-        color: '#FF7050',
-        fontWeight: 700,
-        fontSize: '1rem',
-        textTransform: 'uppercase',
-        letterSpacing: '0.15em',
-        marginTop: '8px'
-      }}>{t("ai_powered_health_assistant")}</p>
+          color: 'rgba(255,255,255,0.9)',
+          fontWeight: 600,
+          fontSize: '1.1rem',
+          letterSpacing: '0.1em'
+        }}>Snap • Track • Transform</p>
+
+        <div style={{ flex: 1 }}></div>
+
+        <div style={{
+          background: 'rgba(255,255,255,0.15)',
+          borderRadius: '24px',
+          padding: '24px',
+          margin: '0 24px 40px 24px',
+          maxWidth: '400px',
+          textAlign: 'center',
+          border: '1px solid rgba(255,255,255,0.2)'
+        }}>
+          <div style={{
+            fontSize: '0.75rem',
+            fontWeight: 700,
+            letterSpacing: '0.15em',
+            color: 'rgba(255,255,255,0.8)',
+            marginBottom: '12px',
+            textTransform: 'uppercase'
+          }}>Health Insight</div>
+          <p style={{
+            fontStyle: 'italic',
+            fontSize: '1.05rem',
+            lineHeight: 1.5,
+            color: 'white'
+          }}>
+            "You are just one delicious, healthy scanned choice away from your target weight!"
+          </p>
+        </div>
       </div>;
   }
 
