@@ -813,11 +813,11 @@ p {
 @media (max-width: 1024px) {
   /* Reduce padding drastically on mobile to free up space */
   .main-content {
-    padding: 16px 8px !important;
+    padding: 16px 16px !important;
   }
   
   .glass-card {
-    padding: 16px 12px !important;
+    padding: 24px 16px !important;
     width: 100% !important;
     box-sizing: border-box !important;
     overflow: hidden !important;
@@ -921,6 +921,32 @@ input, textarea {
 
   .bottom-nav-btn.active svg {
     color: var(--primary);
+  }
+}
+
+
+
+/* Typography responsive fixes */
+.page-title {
+  font-size: 2.5rem;
+  margin-top: 8px;
+}
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 1024px) { .bottom-nav-btn span { white-space: nowrap; font-size: 0.65rem; } }
+
+
+.calorie-value {
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+@media (max-width: 768px) {
+  .calorie-value {
+    font-size: 1.8rem;
   }
 }
 

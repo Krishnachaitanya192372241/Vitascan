@@ -2016,10 +2016,7 @@ export default function App() {
               color: 'var(--primary)',
               letterSpacing: '0.1em'
             }}>{t("summary_profile")}</span>
-                <h1 style={{
-              fontSize: '2.5rem',
-              marginTop: '4px'
-            }}>{t("welcome")} {user.name}!</h1>
+                <h1 className="page-title">{t("welcome")} {user.name}!</h1>
               </div>
               
               <div style={{
@@ -2059,10 +2056,7 @@ export default function App() {
                 position: 'absolute',
                 textAlign: 'center'
               }}>
-                    <h2 style={{
-                  fontSize: '2.5rem',
-                  fontWeight: 900
-                }}>{caloriesRemaining}</h2>
+                    <h2 className="calorie-value">{caloriesRemaining}</h2>
                     <span style={{
                   fontSize: '0.65rem',
                   fontWeight: 'bold',
@@ -2389,13 +2383,12 @@ export default function App() {
           textAlign: 'center'
         }}>
               <span className="badge badge-success">{t("google_gemini_ai")}</span>
-              <h1 style={{
-            fontSize: '2.5rem',
-            marginTop: '8px'
-          }}>{t("scan_title")}</h1>
+              <h1 className="page-title">{t("scan_title")}</h1>
               <p style={{
             marginTop: '8px',
             maxWidth: '100%',
+            fontSize: '0.9rem',
+            color: 'var(--text-muted)',
             margin: '8px auto 0 auto'
           }}>{t("scan_desc")}</p>
             </div>
@@ -2410,6 +2403,7 @@ export default function App() {
                 <div style={{
             display: 'flex',
             gap: '12px',
+            flexWrap: 'wrap',
             borderBottom: '1px solid var(--border-color)',
             paddingBottom: '12px'
           }}>
@@ -2698,10 +2692,7 @@ export default function App() {
               color: 'var(--primary)',
               letterSpacing: '0.15em'
             }}>{t("7_day_plan_matrix")}</span>
-                <h1 style={{
-              fontSize: '2.5rem',
-              marginTop: '4px'
-            }}>{t("ai_diet_planner")}</h1>
+                <h1 className="page-title">{t("ai_diet_planner")}</h1>
               </div>
               <button className="btn btn-primary" onClick={() => handleGenerateDietPlan(true)}>{t("re_generate_plan")}<Sparkles size={16} />
               </button>
@@ -2857,10 +2848,7 @@ export default function App() {
               color: 'var(--primary)',
               letterSpacing: '0.15em'
             }}>{t("biometric_progress")}</span>
-                <h1 style={{
-              fontSize: '2.5rem',
-              marginTop: '4px'
-            }}>{t("weight_analytics")}</h1>
+                <h1 className="page-title">{t("weight_analytics")}</h1>
               </div>
             </div>
 
@@ -3403,23 +3391,23 @@ export default function App() {
       <nav className="bottom-nav">
         <button className={`bottom-nav-btn ${activeTab === 'dashboard' ? 'active' : ''}`} onClick={() => setActiveTab('dashboard')}>
           <LayoutDashboard size={22} />
-          <span>{t("home")}</span>
+          <span>{t("nav_home")}</span>
         </button>
         <button className={`bottom-nav-btn ${activeTab === 'scan' ? 'active' : ''}`} onClick={() => { setActiveTab('scan'); setScanStatus('idle'); setScanResult(null); }}>
           <Camera size={22} />
-          <span>{t("scan")}</span>
+          <span>{t("nav_scan")}</span>
         </button>
         <button className={`bottom-nav-btn ${activeTab === 'plan' ? 'active' : ''}`} onClick={() => { setActiveTab('plan'); handleGenerateDietPlan(); }}>
           <Calendar size={22} />
-          <span>{t("plan")}</span>
+          <span>{t("nav_plan")}</span>
         </button>
         <button className={`bottom-nav-btn ${activeTab === 'reports' ? 'active' : ''}`} onClick={() => setActiveTab('reports')}>
           <Activity size={22} />
-          <span>{t("reports")}</span>
+          <span>{t("nav_stats")}</span>
         </button>
         <button className={`bottom-nav-btn ${activeTab === 'settings' ? 'active' : ''}`} onClick={() => { setActiveTab('settings'); fetchUser(); }}>
           <Sliders size={22} />
-          <span>{t("settings")}</span>
+          <span>{t("nav_settings")}</span>
         </button>
       </nav>
 
