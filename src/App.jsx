@@ -888,7 +888,7 @@ export default function App() {
           text: `Analyze the meal: ${scanInput}`
         });
       }
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -1068,7 +1068,7 @@ export default function App() {
         CRITICAL INSTRUCTION: You MUST generate your ENTIRE response (meal names, descriptions, coach advice, day names, recommendations, clinical advice, titles, etc.) EXCLUSIVELY and ENTIRELY in ${currentLanguageName}. Do NOT return any English unless the selected language is English. There should be ZERO mixed-language output.
         HOWEVER, the "imgKey" field MUST ALWAYS BE IN ENGLISH (1-3 words) so we can search for a stock photo.
       `;
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -1191,7 +1191,7 @@ export default function App() {
         ${JSON.stringify(dietPlan)}
       `;
 
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
