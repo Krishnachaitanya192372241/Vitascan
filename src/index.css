@@ -817,10 +817,8 @@ p {
   }
   
   .glass-card {
-    padding: 24px 16px !important;
     width: 100% !important;
     box-sizing: border-box !important;
-    overflow: hidden !important;
   }
 
   /* Make sure header buttons wrap nicely if there's no space */
