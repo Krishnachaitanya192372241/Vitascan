@@ -138,7 +138,7 @@ const FormatAdvice = ({ text }) => {
       {points.map((p, i) => (
         <div key={i} className="glass-card" style={{ padding: '16px', background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border-color)', borderRadius: '12px', display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
           <span style={{ color: 'var(--primary)', marginTop: '2px' }}><Sparkles size={16}/></span>
-          <span style={{ lineHeight: '1.4', color: 'var(--text-main)', fontSize: '0.9rem' }}>
+          <span style={{ lineHeight: '1.4', color: 'var(--text-main)', fontSize: '0.9rem', wordBreak: 'break-word', overflowWrap: 'break-word' }}>
             {p.trim()}{p.trim().endsWith('.') || p.trim().endsWith('!') ? '' : '.'}
           </span>
         </div>
