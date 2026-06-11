@@ -3356,6 +3356,30 @@ export default function App() {
 
       </main>
 
+      {/* MOBILE BOTTOM NAVIGATION */}
+      <nav className="bottom-nav">
+        <button className={`bottom-nav-btn ${activeTab === 'dashboard' ? 'active' : ''}`} onClick={() => setActiveTab('dashboard')}>
+          <LayoutDashboard size={22} />
+          <span>{t("home")}</span>
+        </button>
+        <button className={`bottom-nav-btn ${activeTab === 'scan' ? 'active' : ''}`} onClick={() => { setActiveTab('scan'); setScanStatus('idle'); setScanResult(null); }}>
+          <Camera size={22} />
+          <span>{t("scan")}</span>
+        </button>
+        <button className={`bottom-nav-btn ${activeTab === 'plan' ? 'active' : ''}`} onClick={() => { setActiveTab('plan'); handleGenerateDietPlan(); }}>
+          <Calendar size={22} />
+          <span>{t("plan")}</span>
+        </button>
+        <button className={`bottom-nav-btn ${activeTab === 'reports' ? 'active' : ''}`} onClick={() => setActiveTab('reports')}>
+          <Activity size={22} />
+          <span>{t("reports")}</span>
+        </button>
+        <button className={`bottom-nav-btn ${activeTab === 'settings' ? 'active' : ''}`} onClick={() => { setActiveTab('settings'); fetchUser(); }}>
+          <Sliders size={22} />
+          <span>{t("settings")}</span>
+        </button>
+      </nav>
+
       {/* Manual Meal Modal */}
       {showAddMealModal && <div className="modal-overlay">
           <div className="glass-card modal-container">
