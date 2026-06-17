@@ -718,7 +718,7 @@ export default function App() {
         await supabase.from('weight_records').insert([{
           user_id: session.user.id,
           weight: onboarding.weight,
-          timestamp: Date.now()
+          timestamp: new Date().toISOString()
         }]);
       }
       setActiveTab('dashboard');
@@ -793,7 +793,7 @@ export default function App() {
         protein: parseFloat(manualMeal.protein || 10),
         carbs: parseFloat(manualMeal.carbs || 30),
         fat: parseFloat(manualMeal.fat || 8),
-        timestamp: Date.now()
+        timestamp: new Date().toISOString()
       };
       console.log('INSERT PAYLOAD:', insertPayload);
       const {
@@ -835,7 +835,7 @@ export default function App() {
       await supabase.from('weight_records').insert([{
         user_id: session.user.id,
         weight: val,
-        timestamp: Date.now()
+        timestamp: new Date().toISOString()
       }]);
       const {
         data: updatedProfile
@@ -1003,7 +1003,7 @@ export default function App() {
         carbs: scanResult.carbs,
         fat: scanResult.fat,
         health_score: scanResult.healthScore,
-        timestamp: Date.now()
+        timestamp: new Date().toISOString()
       };
       console.log('INSERT PAYLOAD:', insertPayload);
       const {
@@ -1402,7 +1402,7 @@ export default function App() {
             await supabase.from('weight_records').insert([{
               user_id: user.id,
               weight: onboarding.weight,
-              timestamp: Date.now()
+              timestamp: new Date().toISOString()
             }]);
           }
         } catch (weightErr) {
