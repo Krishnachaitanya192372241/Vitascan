@@ -196,17 +196,7 @@ body {
 
 @media (max-width: 1024px) {
   .sidebar {
-    position: relative;
-    width: 100%;
-    height: auto;
-    border-right: none;
-    border-bottom: 1px solid var(--border-color);
-    padding: 24px;
-  }
-  .sidebar-links {
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: 20px;
+    display: none !important;
   }
   .main-content {
     margin-left: 0;
