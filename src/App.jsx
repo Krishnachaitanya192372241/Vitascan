@@ -316,13 +316,29 @@ export default function App() {
           const normalized = normalizeUser(profile);
           setUser(normalized);
           setIsDarkMode(!!normalized.isDarkMode);
+          
+          if (profile.preferred_language) {
+            const code = profile.preferred_language.toLowerCase();
+            localStorage.setItem('vitascan_lang', code);
+            i18n.changeLanguage(code);
+          }
+
           if (profile.age) {
             setAppState('main_tabs');
           } else {
-            setOnboarding(prev => ({
-              ...prev,
-              name: profile.name || ''
-            }));
+            setOnboarding({
+              goal: normalized.goal || 'Lose Weight',
+              conditions: normalized.health_conditions ? normalized.health_conditions.split(',') : [],
+              allergies: normalized.allergies || '',
+              name: normalized.name || '',
+              gender: normalized.gender || 'Male',
+              age: normalized.age || 25,
+              height: normalized.height || 170,
+              weight: normalized.weight || 70,
+              targetWeight: normalized.targetWeight || 65,
+              activity: normalized.activityLevel || 'Moderate',
+              dietPreference: normalized.dietPreference || 'Balanced'
+            });
             setAppState('onboarding');
           }
         } else {
@@ -665,7 +681,8 @@ export default function App() {
         fat_target: targets.fatTarget,
         water_target: targets.waterTarget,
         allergies: onboarding.allergies || '',
-        diet_preference: onboarding.dietPreference || 'Balanced'
+        diet_preference: onboarding.dietPreference || 'Balanced',
+        preferred_language: activeLang.toUpperCase()
       };
       const {
         data: existingProfile
@@ -706,7 +723,7 @@ export default function App() {
       }
       setActiveTab('dashboard');
       setDietPlan(null);
-      handleGenerateDietPlan(true);
+      handleGenerateDietPlan(true, normalizeUser(data));
       fetchWeightRecords();
       setAppState('main_tabs');
     } catch (err) {
@@ -1498,7 +1515,7 @@ export default function App() {
               fontWeight: 800,
               color: 'var(--primary)',
               letterSpacing: '-0.03em'
-            }}>{t("vitascan")}</span>
+            }}>VitaScan</span>
             </div>
             <h2 style={{
             fontSize: '2rem',
@@ -1540,25 +1557,25 @@ export default function App() {
           gap: '16px'
         }}>
             {authForm.isSignup && <div className="auth-form-group">
-                <label className="input-label">{t("display_name")}</label>
-                <input type="text" required className="form-input" placeholder={t("placeholder_name")} value={authForm.name} onChange={e => setAuthForm({
+                <label className="input-label">Display Name</label>
+                <input type="text" required className="form-input" placeholder="e.g. John Doe" value={authForm.name} onChange={e => setAuthForm({
               ...authForm,
               name: e.target.value
             })} disabled={isAuthLoading} />
               </div>}
 
             <div className="auth-form-group">
-              <label className="input-label">{t("email_address")}</label>
-              <input type="email" inputMode="email" required className="form-input" placeholder={t("placeholder_email")} value={authForm.email} onChange={e => setAuthForm({
+              <label className="input-label">Email Address</label>
+              <input type="email" inputMode="email" required className="form-input" placeholder="email@example.com" value={authForm.email} onChange={e => setAuthForm({
               ...authForm,
               email: e.target.value
             })} disabled={isAuthLoading} />
             </div>
 
             <div className="auth-form-group">
-              <label className="input-label">{t("password")}</label>
+              <label className="input-label">Password</label>
               <div className="password-input-wrapper">
-                <input type={showPassword ? "text" : "password"} required className="form-input" placeholder={t("placeholder_password")} value={authForm.password} onChange={e => setAuthForm({
+                <input type={showPassword ? "text" : "password"} required className="form-input" placeholder="Min. 6 characters" value={authForm.password} onChange={e => setAuthForm({
                 ...authForm,
                 password: e.target.value
               })} disabled={isAuthLoading} style={{
@@ -1625,12 +1642,11 @@ export default function App() {
       alignItems: 'center',
       justifyContent: 'center'
     }}>
-        <div className="glass-card login-card animate-fade-in" style={{
+        <div className="glass-card login-card animate-fade-in onboarding-card" style={{
         maxWidth: '100%',
-        width: '100%',
-        padding: '40px'
+        width: '100%'
       }}>
-          
+           
           {/* Header */}
           <div style={{
           textAlign: 'center',
@@ -1661,7 +1677,7 @@ export default function App() {
           <div className="onboarding-progress-container">
             <div className="onboarding-progress-bar-bg" />
             <div className="onboarding-progress-bar-fill" style={{
-            width: `${(onboardingStep - 1) / 2 * 100}%`
+            width: `${(onboardingStep - 1) / 3 * 100}%`
           }} />
             
             <div className={`onboarding-step-indicator ${onboardingStep >= 1 ? 'active' : ''} ${onboardingStep > 1 ? 'completed' : ''}`}>
@@ -1670,14 +1686,17 @@ export default function App() {
             <div className={`onboarding-step-indicator ${onboardingStep >= 2 ? 'active' : ''} ${onboardingStep > 2 ? 'completed' : ''}`}>
               {onboardingStep > 2 ? <Check size={16} /> : "2"}
             </div>
-            <div className={`onboarding-step-indicator ${onboardingStep >= 3 ? 'active' : ''}`}>
-              3
+            <div className={`onboarding-step-indicator ${onboardingStep >= 3 ? 'active' : ''} ${onboardingStep > 3 ? 'completed' : ''}`}>
+              {onboardingStep > 3 ? <Check size={16} /> : "3"}
+            </div>
+            <div className={`onboarding-step-indicator ${onboardingStep >= 4 ? 'active' : ''}`}>
+              4
             </div>
           </div>
 
           <form onSubmit={e => {
           e.preventDefault();
-          if (onboardingStep < 3) {
+          if (onboardingStep < 4) {
             setOnboardingStep(prev => prev + 1);
           } else {
             handleOnboardingSubmit(e);
@@ -1688,8 +1707,89 @@ export default function App() {
           gap: '24px'
         }}>
             
-            {/* STEP 1: Basic identity & main health goal */}
+            {/* STEP 1: Language preference selection */}
             {onboardingStep === 1 && <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '20px',
+            animation: 'fadeIn 0.3s ease'
+          }}>
+                <h3 style={{
+              fontSize: '1.25rem',
+              fontWeight: 800,
+              color: 'var(--text-main)',
+              borderBottom: '1px solid var(--border-color)',
+              paddingBottom: '8px'
+            }}>{t("select_preferred_language")}</h3>
+                
+                <p style={{
+              color: 'var(--text-muted)',
+              fontSize: '0.9rem',
+              marginTop: '-8px',
+              lineHeight: '1.4'
+            }}>
+                  Select the language you want to experience the app in. The setup and AI translations will instantly reflect your preference.
+                </p>
+
+                <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '16px',
+              marginTop: '8px'
+            }}>
+                  {[{
+                code: 'EN',
+                name: 'English',
+                native: 'English'
+              }, {
+                code: 'HI',
+                name: 'Hindi',
+                native: 'हिन्दी'
+              }, {
+                code: 'TE',
+                name: 'Telugu',
+                native: 'తెలుగు'
+              }, {
+                code: 'TA',
+                name: 'Tamil',
+                native: 'தமிழ்'
+              }].map(lang => {
+                const isSelected = activeLang === lang.code.toLowerCase();
+                return <button key={lang.code} type="button" onClick={() => handleLanguageChange(lang.code)} style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '24px 16px',
+                  background: isSelected ? 'var(--primary-glow)' : 'var(--bg-unselected, rgba(0,0,0,0.015))',
+                  border: `2.5px solid ${isSelected ? 'var(--primary)' : 'var(--border-color)'}`,
+                  borderRadius: '20px',
+                  cursor: 'pointer',
+                  transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+                  transform: isSelected ? 'scale(1.02)' : 'scale(1)',
+                  boxShadow: isSelected ? '0 8px 20px rgba(255, 79, 24, 0.15)' : 'none',
+                  gap: '6px'
+                }}>
+                        <Globe size={24} color={isSelected ? 'var(--primary)' : 'var(--text-muted)'} style={{
+                    marginBottom: '4px'
+                  }} />
+                        <span style={{
+                    fontSize: '1.15rem',
+                    fontWeight: 800,
+                    color: isSelected ? 'var(--primary)' : 'var(--text-main)'
+                  }}>{lang.native}</span>
+                        <span style={{
+                    fontSize: '0.8rem',
+                    fontWeight: 600,
+                    color: 'var(--text-muted)'
+                  }}>{lang.name}</span>
+                      </button>;
+              })}
+                </div>
+              </div>}
+
+            {/* STEP 2: Basic identity & main health goal */}
+            {onboardingStep === 2 && <div style={{
             display: 'flex',
             flexDirection: 'column',
             gap: '20px',
@@ -1754,8 +1854,8 @@ export default function App() {
                 </div>
               </div>}
 
-            {/* STEP 2: Physical metrics and lifestyle */}
-            {onboardingStep === 2 && <div style={{
+            {/* STEP 3: Physical metrics and lifestyle */}
+            {onboardingStep === 3 && <div style={{
             display: 'flex',
             flexDirection: 'column',
             gap: '20px',
@@ -1810,8 +1910,8 @@ export default function App() {
                 </div>
               </div>}
 
-            {/* STEP 3: Dietary Rules & Conditions */}
-            {onboardingStep === 3 && <div style={{
+            {/* STEP 4: Dietary Rules & Conditions */}
+            {onboardingStep === 4 && <div style={{
             display: 'flex',
             flexDirection: 'column',
             gap: '20px',
@@ -1882,10 +1982,7 @@ export default function App() {
               </div>}
 
             {/* Actions */}
-            <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            gap: '16px',
+            <div className="btn-row-responsive" style={{
             marginTop: '12px'
           }}>
               {onboardingStep > 1 ? <button type="button" className="btn btn-secondary" style={{
@@ -1895,7 +1992,7 @@ export default function App() {
               <button type="submit" className="btn btn-primary" style={{
               flex: 2
             }}>
-                {onboardingStep === 3 ? "Complete Profile Setup" : "Continue to Next Step"}
+                {onboardingStep === 4 ? "Complete Profile Setup" : "Continue to Next Step"}
               </button>
             </div>
 
@@ -2682,14 +2779,11 @@ export default function App() {
         {activeTab === 'plan' && <div style={{
         display: 'flex',
         flexDirection: 'column',
-        gap: '32px'
+        gap: '32px',
+        fontFamily: "'Times New Roman', Times, serif"
       }}>
             
-            <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center'
-        }}>
+            <div className="plan-header-row">
               <div>
                 <span style={{
               fontSize: '0.75rem',
@@ -2759,9 +2853,9 @@ export default function App() {
                 paddingBottom: '10px',
                 marginBottom: '14px'
               }}>
-                        {day.dayName}{t("plan")}</h3>
+                        {day.dayName} - {t("plan")}</h3>
                       
-                      <div className="grid-4">
+                      <div className="plan-meals-grid">
                         {day.meals?.map((m, i) => <div key={i} className="glass-card" style={{
                   background: 'rgba(255,255,255,0.01)',
                   minHeight: '320px',
@@ -2781,12 +2875,15 @@ export default function App() {
                     flex: 1,
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'space-between'
+                    justifyContent: 'space-between',
+                    textAlign: 'center',
+                    alignItems: 'center'
                   }}>
-                              <div>
+                              <div style={{ width: '100%' }}>
                                 <div style={{
                         display: 'flex',
-                        justifyContent: 'space-between',
+                        justifyContent: 'center',
+                        gap: '8px',
                         fontSize: '0.7rem',
                         color: 'var(--text-muted)',
                         marginBottom: '4px'
