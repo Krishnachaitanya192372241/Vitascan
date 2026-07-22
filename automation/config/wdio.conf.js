@@ -1,25 +1,25 @@
-// config/wdio.conf.js
+const path = require('path');
+
 exports.config = {
     runner: 'local',
     port: 4723,
-    path: '/',
     specs: [
-        '../tests/**/*.js'
+        '../tests/**/*.spec.js'
     ],
+    exclude: [],
     maxInstances: 1,
     capabilities: [{
         platformName: 'Android',
         'appium:deviceName': 'Android Emulator',
-        'appium:platformVersion': '13.0',
         'appium:automationName': 'UiAutomator2',
-        'appium:app': path.join(__dirname, '../../VitaScan/android/app/build/outputs/apk/debug/app-debug.apk'),
-        'appium:appPackage': 'com.vitascan.app',
-        'appium:appActivity': '.MainActivity',
+        'appium:app': path.join(process.cwd(), '../app/build/outputs/apk/debug/app-debug.apk'), // Update path depending on build
+        'appium:appWaitActivity': '*',
         'appium:noReset': false,
-        'appium:newCommandTimeout': 240
+        'appium:fullReset': true,
     }],
     logLevel: 'info',
     bail: 0,
+    baseUrl: 'http://localhost',
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
@@ -29,5 +29,5 @@ exports.config = {
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000
-    }
+    },
 };
