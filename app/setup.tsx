@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, SafeAreaView, TouchableOpacity, ScrollView } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useRouter, Link } from 'expo-router';
 import { Heart, Check, ChevronDown } from 'lucide-react-native';
 
 export default function SetupScreen() {
@@ -161,19 +161,14 @@ export default function SetupScreen() {
               <Text className="text-slate-800 font-bold">Back</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity 
-              activeOpacity={0.7}
-              onPress={() => {
-                try {
-                  router.push('/(tabs)');
-                } catch (e) {
-                  router.replace('/');
-                }
-              }}
-              className="w-[68%] h-14 items-center justify-center rounded-xl bg-orange-500 shadow-md"
-            >
-              <Text className="text-white font-bold text-lg">Complete Profile Setup</Text>
-            </TouchableOpacity>
+            <Link href="/(tabs)" asChild>
+              <TouchableOpacity 
+                activeOpacity={0.7}
+                className="w-[68%] h-14 items-center justify-center rounded-xl bg-orange-500 shadow-md"
+              >
+                <Text className="text-white font-bold text-lg">Complete Profile Setup</Text>
+              </TouchableOpacity>
+            </Link>
           </View>
 
         </View>
