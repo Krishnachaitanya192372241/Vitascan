@@ -1,0 +1,41 @@
+name: Load Testing Workflow
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  load-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        working-directory: load-test
+        run: npm install
+
+      - name: Run Load Test Suite
+        working-directory: load-test
+        run: node run.js
+
+      - name: Upload Load Test Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: load-test-reports
+          path: load_test_results.xlsx
+          retention-days: 30
+
+      - name: Generate Github Actions Summary
+        if: always()
+        run: |
+          echo "## Load Testing Results" >> $GITHUB_STEP_SUMMARY
+          echo "Load test execution completed. Please check the artifacts for the full Excel report." >> $GITHUB_STEP_SUMMARY

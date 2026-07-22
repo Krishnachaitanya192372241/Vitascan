@@ -1,0 +1,41 @@
+name: Selenium Web E2E Testing
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  selenium-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        working-directory: selenium-test
+        run: npm install
+
+      - name: Run Selenium Test Suite
+        working-directory: selenium-test
+        run: node run-selenium.js
+
+      - name: Upload Selenium Test Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: selenium-test-reports
+          path: selenium_test_300_cases.xlsx
+          retention-days: 30
+
+      - name: Generate Github Actions Summary
+        if: always()
+        run: |
+          echo "## Selenium Testing Results" >> $GITHUB_STEP_SUMMARY
+          echo "Selenium E2E execution completed. Please check the artifacts for the full Excel report." >> $GITHUB_STEP_SUMMARY
