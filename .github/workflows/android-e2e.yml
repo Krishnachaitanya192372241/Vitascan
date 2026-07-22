@@ -1,0 +1,120 @@
+name: Android E2E Appium Enterprise Workflow
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *' # Run nightly at 2 AM
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    runs-on: macos-13 # macOS is required to launch hardware accelerated Android Emulators in GitHub Actions
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: 'automation/package-lock.json'
+
+      - name: Install Android Dependencies
+        run: |
+          npm install
+          cd automation && npm install
+
+      - name: Build Android App (APK)
+        run: |
+          echo "Building debug APK..."
+          # Since it's an Expo React Native app, we run prebuild and gradle build
+          npx expo prebuild --platform android --no-interactive
+          cd android && ./gradlew assembleDebug
+
+      - name: Start Android Emulator & Run Appium Tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 33
+          target: google_apis
+          arch: x86_64
+          force-avd-creation: false
+          emulator-options: -no-window -gpu off -no-audio -no-boot-anim -camera-back none
+          disable-animations: true
+          script: |
+            echo "Starting Appium Server..."
+            npx appium --port 4723 &
+            
+            echo "Verifying emulator is ready..."
+            adb wait-for-device
+            
+            echo "Installing APK..."
+            adb install android/app/build/outputs/apk/debug/app-debug.apk
+            
+            echo "Executing E2E Test Runner..."
+            node automation/runners/testRunner.js
+
+      - name: Create Reports Directories
+        if: always()
+        run: |
+          mkdir -p reports/latest
+          cp -r "Test Results/HTML/"* reports/latest/
+          cp -r "Test Results/Excel/"* reports/latest/
+          cp -r "Test Results/JSON/"* reports/latest/
+          cp -r "Test Results/Summary/"* reports/latest/
+          
+          # Maintain history
+          mkdir -p reports/history/build-${{ github.run_number }}
+          cp -r reports/latest/* reports/history/build-${{ github.run_number }}/
+
+      - name: Upload Test Artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: vitascan-e2e-reports
+          path: |
+            Test Results/Excel/
+            Test Results/HTML/
+            Test Results/JSON/
+            Test Results/Summary/
+          retention-days: 30
+
+      - name: Setup Pages
+        if: always()
+        uses: actions/configure-pages@v4
+
+      - name: Upload Pages Artifact
+        if: always()
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: reports/
+
+      - name: Deploy to GitHub Pages
+        if: always()
+        uses: actions/deploy-pages@v4
+
+      - name: Generate Github Actions Summary
+        if: always()
+        run: |
+          cat "Test Results/Summary/summary.md" >> $GITHUB_STEP_SUMMARY
