@@ -1,98 +1,67 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
-
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
+// app/(tabs)/index.tsx
+import React from 'react';
+import { View, Text, ScrollView, SafeAreaView, TouchableOpacity } from 'react-native';
+import { Droplet, Flame, Zap, Clock, ChevronRight } from 'lucide-react-native';
+import { Card } from '@/components/ui/Card';
+import Colors from '@/constants/Colors';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+    <View className="flex-1 bg-slate-950">
+      <SafeAreaView className="flex-1">
+        <ScrollView className="flex-1 px-6 pb-24" showsVerticalScrollIndicator={false}>
+          <View className="flex-row justify-between items-center mt-6 mb-8">
+            <View>
+              <Text className="text-slate-400 font-premium text-base">Welcome back,</Text>
+              <Text className="text-white text-3xl font-premium font-bold">Alex Johnson</Text>
+            </View>
+            <TouchableOpacity className="w-12 h-12 rounded-full bg-slate-800 items-center justify-center border border-slate-700">
+              <Text className="text-white">AJ</Text>
+            </TouchableOpacity>
+          </View>
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+          <Card className="mb-6 p-0 overflow-hidden">
+            <LinearGradient colors={['#1E293B', '#0F172A']} className="p-6">
+              <View className="flex-row justify-between items-center">
+                <View>
+                  <Text className="text-slate-400 font-premium text-sm uppercase tracking-wider">Health Score</Text>
+                  <Text className="text-white text-5xl font-premium font-bold mt-1">84<Text className="text-lg text-slate-500">/100</Text></Text>
+                  <View className="bg-emerald-500/20 px-3 py-1 rounded-full mt-3 self-start">
+                    <Text className="text-emerald-400 text-xs font-premium font-bold">+2.4% from last week</Text>
+                  </View>
+                </View>
+                <View className="w-24 h-24 rounded-full border-8 border-primary items-center justify-center">
+                  <Text className="text-white font-bold">EXCELLENT</Text>
+                </View>
+              </View>
+            </LinearGradient>
+          </Card>
+
+          <View className="flex-row space-x-4 mb-6">
+            <View className="flex-1">
+              <Card className="items-center py-6">
+                <View className="w-12 h-12 rounded-2xl bg-orange-500/20 items-center justify-center mb-3">
+                  <Flame size={24} color="#F97316" />
+                </View>
+                <Text className="text-slate-400 text-xs font-premium">Calories</Text>
+                <Text className="text-white text-xl font-premium font-bold mt-1">1,840</Text>
+              </Card>
+            </View>
+            <View className="flex-1">
+              <Card className="items-center py-6">
+                <View className="w-12 h-12 rounded-2xl bg-blue-500/20 items-center justify-center mb-3">
+                  <Droplet size={24} color="#3B82F6" />
+                </View>
+                <Text className="text-slate-400 text-xs font-premium">Water</Text>
+                <Text className="text-white text-xl font-premium font-bold mt-1">1.2L</Text>
+              </Card>
+            </View>
+          </View>
+
+          <View className="h-24" />
+        </ScrollView>
+      </SafeAreaView>
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});

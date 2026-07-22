@@ -1,0 +1,15 @@
+{
+  "validUser": {
+    "email": "alex.johnson@vitascan.com",
+    "password": "SecurePassword123",
+    "fullName": "Alex Johnson"
+  },
+  "invalidUsers": [
+    { "email": "invalid-email", "password": "short", "errorMsg": "Invalid email address" },
+    { "email": "unknown@vitascan.com", "password": "WrongPassword!", "errorMsg": "Invalid credentials" }
+  ],
+  "mockScans": [
+    { "id": "SCN-001", "type": "vitamins", "score": 85, "date": "2026-07-20" },
+    { "id": "SCN-002", "type": "minerals", "score": 92, "date": "2026-07-21" }
+  ]
+}
