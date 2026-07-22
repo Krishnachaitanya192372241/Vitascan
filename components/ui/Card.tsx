@@ -7,12 +7,14 @@ interface CardProps {
   children: React.ReactNode;
   style?: ViewStyle;
   variant?: 'elevated' | 'outline' | 'glass';
+  className?: string;
 }
 
 export const Card: React.FC<CardProps> = ({
   children,
   style,
   variant = 'elevated',
+  className = '',
 }) => {
   const getVariantStyles = () => {
     switch (variant) {
@@ -29,7 +31,7 @@ export const Card: React.FC<CardProps> = ({
 
   return (
     <View 
-      className={`p-5 rounded-3xl overflow-hidden ${getVariantStyles()}`}
+      className={`p-5 rounded-3xl overflow-hidden ${getVariantStyles()} ${className}`}
       style={style}
     >
       {children}

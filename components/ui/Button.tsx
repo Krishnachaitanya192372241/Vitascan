@@ -39,7 +39,7 @@ export const Button: React.FC<ButtonProps> = ({
         style={style}
       >
         <LinearGradient
-          colors={Colors.gradient.primary}
+          colors={Colors.gradient.primary as any}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 0 }}
           className="absolute inset-0"
