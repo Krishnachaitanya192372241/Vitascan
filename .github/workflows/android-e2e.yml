@@ -20,7 +20,7 @@ concurrency:
 
 jobs:
   build-and-test:
-    runs-on: macos-13 # macOS is required to launch hardware accelerated Android Emulators in GitHub Actions
+    runs-on: macos-latest # macOS is required to launch hardware accelerated Android Emulators in GitHub Actions
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
