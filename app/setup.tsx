@@ -95,7 +95,7 @@ export default function SetupScreen() {
           </View>
 
           {/* Health Conditions Checkboxes */}
-          <View className="mb-10 z-0">
+          <View className="mb-10">
             <Text className="text-xs font-bold text-slate-500 mb-3 tracking-wider">ACTIVE HEALTH CONDITIONS</Text>
             
             <View className="flex-row flex-wrap justify-between">
@@ -152,7 +152,7 @@ export default function SetupScreen() {
           </View>
 
           {/* Action Buttons */}
-          <View className="flex-row justify-between z-0 pb-4">
+          <View className="flex-row justify-between pb-4">
             <TouchableOpacity 
               activeOpacity={0.7}
               onPress={() => router.back()}
@@ -163,7 +163,13 @@ export default function SetupScreen() {
 
             <TouchableOpacity 
               activeOpacity={0.7}
-              onPress={() => router.replace('/(tabs)')}
+              onPress={() => {
+                try {
+                  router.push('/(tabs)');
+                } catch (e) {
+                  router.replace('/');
+                }
+              }}
               className="w-[68%] h-14 items-center justify-center rounded-xl bg-orange-500 shadow-md"
             >
               <Text className="text-white font-bold text-lg">Complete Profile Setup</Text>
