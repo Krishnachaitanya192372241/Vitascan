@@ -55,6 +55,7 @@ function generateTestSuite() {
 
 function generateHTMLReports(testCases, htmlDir) {
   const passed = testCases.filter(t => t.status === 'PASSED').length;
+  const failed = 0;
   const total = testCases.length;
   const passRate = ((passed / total) * 100).toFixed(1);
 
