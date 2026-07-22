@@ -50,7 +50,7 @@ jobs:
         run: |
           echo "Building debug APK..."
           # Since it's an Expo React Native app, we run prebuild and gradle build
-          npx expo prebuild --platform android --no-interactive
+          npx expo prebuild --platform android
           cd android && ./gradlew assembleDebug
 
       - name: Start Android Emulator & Run Appium Tests
@@ -102,16 +102,19 @@ jobs:
 
       - name: Setup Pages
         if: always()
+        continue-on-error: true
         uses: actions/configure-pages@v4
 
       - name: Upload Pages Artifact
         if: always()
+        continue-on-error: true
         uses: actions/upload-pages-artifact@v3
         with:
           path: reports/
 
       - name: Deploy to GitHub Pages
         if: always()
+        continue-on-error: true
         uses: actions/deploy-pages@v4
 
       - name: Generate Github Actions Summary
