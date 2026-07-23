@@ -1,0 +1,15 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 60
+      arrivalRate: 100
+      name: "Baseline Load"
+    - duration: 60
+      arrivalRate: 50
+      rampTo: 500
+      name: "Spike Test"
+scenarios:
+  - name: "Health Check Flow"
+    flow:
+      - get:
+          url: "/api/health"

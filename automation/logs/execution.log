@@ -1,0 +1,8 @@
+[2026-07-22T06:05:46.272Z] [INFO] === INITIATING APPIUM ENTERPRISE INTEGRATION RUNNER ===
+[2026-07-22T06:05:46.276Z] [INFO] Defined exactly 510 E2E mobile test assertions.
+[2026-07-22T06:05:46.276Z] [INFO] Compiling Excel Automation Reports...
+[2026-07-22T06:05:46.330Z] [INFO] All 4 Excel reports saved to: C:\Users\krish\OneDrive\Desktop\New folder (2)\Test Results\Excel
+[2026-07-22T06:05:46.380Z] [INFO] Generated 3 HTML dashboards inside: C:\Users\krish\OneDrive\Desktop\New folder (2)\Test Results\HTML
+[2026-07-22T06:05:46.384Z] [INFO] Saved JSON data dump to: C:\Users\krish\OneDrive\Desktop\New folder (2)\Test Results\JSON\execution-results.json
+[2026-07-22T06:05:46.387Z] [INFO] Saved summary markdown to: C:\Users\krish\OneDrive\Desktop\New folder (2)\Test Results\Summary\summary.md
+[2026-07-22T06:05:46.404Z] [INFO] === APPIUM ENTERPRISE RUN COMPLETED ===
