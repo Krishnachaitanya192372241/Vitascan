@@ -2,9 +2,8 @@
   "appId": "com.vitascan.app",
   "appName": "vitascan",
   "webDir": "dist",
-  "plugins": {
-    "CapacitorHttp": {
-      "enabled": true
-    }
+  "server": {
+    "androidScheme": "https"
   }
 }
+

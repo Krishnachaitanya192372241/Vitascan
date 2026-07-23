@@ -1557,13 +1557,20 @@ body.lang-ta .bottom-nav-btn span {
 
 .plan-meals-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr) !important;
+  grid-template-columns: repeat(4, 1fr) !important;
   gap: 16px;
   width: 100%;
 }
 
+@media (max-width: 900px) {
+  .plan-meals-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
 @media (max-width: 480px) {
   .plan-meals-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px;
   }
 }

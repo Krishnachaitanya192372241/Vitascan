@@ -3,6 +3,11 @@ import { Plus, Trash2, Camera, Sparkles, Info, Globe, LayoutDashboard, Calendar,
 import { supabase } from './supabaseClient';
 const API_BASE = 'https://vitascan-backend-9ehb.onrender.com/api';
 import { useTranslation } from 'react-i18next';
+import enTranslations from './locales/en.json';
+import hiTranslations from './locales/hi.json';
+import teTranslations from './locales/te.json';
+import taTranslations from './locales/ta.json';
+const ALL_TRANSLATIONS = { en: enTranslations, hi: hiTranslations, te: teTranslations, ta: taTranslations };
 const PEXELS_CACHE = {};
 const normalizeMealName = name => {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
@@ -132,17 +137,27 @@ const calculateMetabolicTargets = profile => {
 };
 const FormatAdvice = ({ text }) => {
   if (!text) return null;
-  const points = text.split(/(?:\. |\n|- )/).filter(p => p.trim().length > 3);
   return (
-    <div className="advice-grid">
-      {points.map((p, i) => (
-        <div key={i} className="glass-card" style={{ padding: '16px', background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border-color)', borderRadius: '12px', display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-          <span style={{ color: 'var(--primary)', marginTop: '2px' }}><Sparkles size={16}/></span>
-          <span style={{ lineHeight: '1.4', color: 'var(--text-main)', fontSize: '0.9rem', wordBreak: 'break-word', overflowWrap: 'break-word' }}>
-            {p.trim()}{p.trim().endsWith('.') || p.trim().endsWith('!') ? '' : '.'}
-          </span>
-        </div>
-      ))}
+    <div style={{
+      display: 'flex',
+      gap: '16px',
+      marginTop: '12px',
+      paddingBottom: '8px'
+    }}>
+      <div style={{
+        width: '4px',
+        background: 'linear-gradient(to bottom, #FF6B6B, #FF8E53)',
+        borderRadius: '4px',
+        flexShrink: 0
+      }}></div>
+      <p style={{
+        fontSize: '1rem',
+        lineHeight: '1.6',
+        color: 'var(--text-main)',
+        margin: 0
+      }}>
+        {text}
+      </p>
     </div>
   );
 };
@@ -197,6 +212,25 @@ export default function App() {
     password: '',
     isSignup: false
   });
+  const [isOtpVerification, setIsOtpVerification] = useState(false);
+  const [otpCode, setOtpCode] = useState('');
+  const [resendCountdown, setResendCountdown] = useState(60);
+
+  useEffect(() => {
+    let timer;
+    if (isOtpVerification && resendCountdown > 0) {
+      timer = setInterval(() => {
+        setResendCountdown(prev => prev - 1);
+      }, 1000);
+    }
+    return () => clearInterval(timer);
+  }, [isOtpVerification, resendCountdown]);
+
+  useEffect(() => {
+    if (isOtpVerification) {
+      setResendCountdown(60);
+    }
+  }, [isOtpVerification]);
   const [onboarding, setOnboarding] = useState({
     goal: 'Lose Weight',
     conditions: [],
@@ -250,10 +284,22 @@ export default function App() {
       localStorage.setItem('vitascan_diet_plan', JSON.stringify(dietPlan));
     }
   }, [dietPlan]);
-  const { t, i18n } = useTranslation();
-  
-  // Also keep currentLanguageName for Gemini prompts
-  const activeLang = i18n.language || 'en';
+  // ── Pure-React translation system (bypasses react-i18next reactivity issues) ──
+  const [activeLang, setActiveLang] = useState(
+    localStorage.getItem('vitascan_lang') || 'en'
+  );
+  // t() reads directly from locale JSON based on React state → always re-renders correctly
+  const t = (key) => {
+    const dict = ALL_TRANSLATIONS[activeLang] || ALL_TRANSLATIONS['en'];
+    return dict[key] ?? ALL_TRANSLATIONS['en'][key] ?? key;
+  };
+  // Keep i18n in sync for any remaining react-i18next usages
+  const { i18n } = useTranslation();
+  useEffect(() => {
+    if (i18n.language !== activeLang) i18n.changeLanguage(activeLang);
+  }, [activeLang]);
+
+
   const currentLanguageName = {
     en: 'English',
     hi: 'Hindi',
@@ -298,17 +344,15 @@ export default function App() {
         }
       } = await supabase.auth.getSession();
       if (session?.user) {
-        // Fetch profile
+        // Fetch profile — use maybeSingle() so missing rows don't throw errors
         const {
           data: profile,
           error
-        } = await supabase.from('profiles').select('*').eq('id', session.user.id).single();
+        } = await supabase.from('profiles').select('*').eq('id', session.user.id).maybeSingle();
         if (error) {
           console.error("Failed to fetch profile:", error);
-          setUser({
-            id: session.user.id,
-            email: session.user.email
-          });
+          // Don't block user — send to main if error, they can update profile in settings
+          setUser({ id: session.user.id, email: session.user.email });
           setAppState('onboarding');
           return;
         }
@@ -316,14 +360,17 @@ export default function App() {
           const normalized = normalizeUser(profile);
           setUser(normalized);
           setIsDarkMode(!!normalized.isDarkMode);
-          
+
           if (profile.preferred_language) {
             const code = profile.preferred_language.toLowerCase();
             localStorage.setItem('vitascan_lang', code);
             i18n.changeLanguage(code);
+            setActiveLang(code);
           }
 
-          if (profile.age) {
+          // Profile is complete if user has entered biometric data (age/height/weight)
+          const isProfileComplete = !!(profile.age || profile.height || profile.weight);
+          if (isProfileComplete) {
             setAppState('main_tabs');
           } else {
             setOnboarding({
@@ -342,10 +389,8 @@ export default function App() {
             setAppState('onboarding');
           }
         } else {
-          setUser({
-            id: session.user.id,
-            email: session.user.email
-          });
+          // No profile row yet — new user, send to onboarding
+          setUser({ id: session.user.id, email: session.user.email });
           setAppState('onboarding');
         }
       } else {
@@ -527,13 +572,37 @@ export default function App() {
           error
         } = await supabase.auth.signUp({
           email: authForm.email,
-          password: authForm.password
+          password: authForm.password,
+          options: {
+            // Don't require email redirect for mobile
+            emailRedirectTo: undefined
+          }
         });
         if (error) {
+          let errMsg = error.message || error.error_description || "Unknown error occurred";
+          if (typeof errMsg === 'object') {
+            try {
+              errMsg = JSON.stringify(errMsg);
+              if (errMsg === '{}') errMsg = "Connection to server failed. Please try again.";
+            } catch (e) {
+              errMsg = "Unknown error occurred";
+            }
+          } else if (typeof errMsg !== 'string') {
+            errMsg = String(errMsg);
+          }
+
+          // Pass the raw Supabase error directly to the UI
+          setAuthStatusMsg({ type: 'error', text: errMsg });
+          setIsAuthLoading(false);
+          return;
+        }
+        // Check if email confirmation is required
+        if (data.user && !data.user.email_confirmed_at && data.session === null) {
           setAuthStatusMsg({
-            type: 'error',
-            text: error.message
+            type: 'success',
+            text: 'A 6-digit code has been sent to your email. Please enter it below.'
           });
+          setIsOtpVerification(true);
           setIsAuthLoading(false);
           return;
         }
@@ -599,14 +668,26 @@ export default function App() {
           password: authForm.password
         });
         if (error) {
-          setAuthStatusMsg({
-            type: 'error',
-            text: error.message
-          });
+          let errMsg = error.message || '';
+          const code = error.code || '';
+          const status = error.status || 0;
+          console.error('SIGNIN ERROR:', { code, status, errMsg });
+          if (code === 'email_not_confirmed' || errMsg.toLowerCase().includes('email not confirmed') || status === 422) {
+            errMsg = '✉️ Your email is not confirmed yet. Please check your inbox and click the confirmation link — OR go to Supabase Dashboard → Authentication → Providers → Email and turn OFF "Confirm email".';
+          } else if (code === 'invalid_credentials' || status === 400 || errMsg.toLowerCase().includes('invalid login') || errMsg.toLowerCase().includes('invalid credentials')) {
+            errMsg = 'Incorrect email or password. Please check and try again.';
+          } else if (errMsg.toLowerCase().includes('network') || errMsg.toLowerCase().includes('fetch')) {
+            errMsg = 'Network error. Check your internet connection.';
+          } else {
+            errMsg = `Sign in failed (${status || errMsg}). Check your email & password.`;
+          }
+          setAuthStatusMsg({ type: 'error', text: errMsg });
           setIsAuthLoading(false);
           return;
         }
+
         if (data.user) {
+
           // Clear previous states to get a fresh start!
           setMeals([]);
           setWeightRecords([]);
@@ -637,12 +718,19 @@ export default function App() {
           }
           const normalized = normalizeUser(profile);
           setUser(normalized);
+          // Check if user has already completed onboarding (has biometric data)
+          const isProfileComplete = !!(profile?.age || profile?.height || profile?.weight);
           setAuthStatusMsg({
             type: 'success',
             text: 'Access granted! Logging you in...'
           });
           setTimeout(() => {
-            setAppState('main_tabs');
+            if (isProfileComplete) {
+              setAppState('main_tabs');
+            } else {
+              setAppState('onboarding');
+              setOnboardingStep(1);
+            }
             setIsAuthLoading(false);
           }, 1000);
         }
@@ -656,6 +744,55 @@ export default function App() {
       setIsAuthLoading(false);
     }
   };
+
+  const handleVerifyOtp = async (e) => {
+    e.preventDefault();
+    setIsAuthLoading(true);
+    setAuthStatusMsg({ type: '', text: '' });
+    try {
+      const { data, error } = await supabase.auth.verifyOtp({
+        email: authForm.email,
+        token: otpCode,
+        type: 'signup'
+      });
+      if (error) {
+        setAuthStatusMsg({ type: 'error', text: error.message });
+        setIsAuthLoading(false);
+        return;
+      }
+      if (data.session) {
+        setAuthStatusMsg({ type: 'success', text: 'Email verified! Logging you in...' });
+        setIsOtpVerification(false);
+        setTimeout(async () => {
+          await fetchUser();
+          setAppState('onboarding');
+        }, 1500);
+      }
+    } catch (err) {
+      setAuthStatusMsg({ type: 'error', text: err.message });
+      setIsAuthLoading(false);
+    }
+  };
+
+  const handleResendOtp = async () => {
+    if (resendCountdown > 0) return;
+    setAuthStatusMsg({ type: '', text: '' });
+    try {
+      const { error } = await supabase.auth.resend({
+        type: 'signup',
+        email: authForm.email
+      });
+      if (error) {
+        setAuthStatusMsg({ type: 'error', text: error.message });
+        return;
+      }
+      setAuthStatusMsg({ type: 'success', text: 'A new 6-digit code has been sent!' });
+      setResendCountdown(60);
+    } catch (err) {
+      setAuthStatusMsg({ type: 'error', text: err.message });
+    }
+  };
+
   const handleOnboardingSubmit = async e => {
     e.preventDefault();
     const targets = calculateMetabolicTargets(onboarding);
@@ -718,7 +855,7 @@ export default function App() {
         await supabase.from('weight_records').insert([{
           user_id: session.user.id,
           weight: onboarding.weight,
-          timestamp: new Date().toISOString()
+          timestamp: Date.now()
         }]);
       }
       setActiveTab('dashboard');
@@ -793,7 +930,7 @@ export default function App() {
         protein: parseFloat(manualMeal.protein || 10),
         carbs: parseFloat(manualMeal.carbs || 30),
         fat: parseFloat(manualMeal.fat || 8),
-        timestamp: new Date().toISOString()
+        timestamp: Date.now()
       };
       console.log('INSERT PAYLOAD:', insertPayload);
       const {
@@ -835,7 +972,7 @@ export default function App() {
       await supabase.from('weight_records').insert([{
         user_id: session.user.id,
         weight: val,
-        timestamp: new Date().toISOString()
+        timestamp: Date.now()
       }]);
       const {
         data: updatedProfile
@@ -1003,17 +1140,23 @@ export default function App() {
         carbs: scanResult.carbs,
         fat: scanResult.fat,
         health_score: scanResult.healthScore,
-        timestamp: new Date().toISOString()
+        timestamp: Date.now()
       };
       console.log('INSERT PAYLOAD:', insertPayload);
       const {
         error
       } = await supabase.from('meals').insert([insertPayload]);
-      if (error) console.error("Error inserting scanned meal:", error);
+      if (error) {
+        console.error("Error inserting scanned meal:", error);
+        alert("Failed to save meal to database: " + error.message);
+        return;
+      }
       fetchMeals();
       setActiveTab('dashboard');
       setScanResult(null);
       setScanInput('');
+      setScanImage(null);
+      setScanImagePreview(null);
       setScanStatus('idle');
     } catch (err) {
       console.error(err);
@@ -1070,8 +1213,10 @@ export default function App() {
         dietRule = 'CRITICAL RULE: The user is VEGAN. You MUST absolutely exclude ALL animal-derived products including meat, poultry, fish, seafood, eggs, milk, cheese, yogurt, honey, and dairy.';
       } else if (pref === 'Eggetarian') {
         dietRule = 'CRITICAL RULE: The user is EGGETARIAN. You MUST absolutely exclude all meat, chicken, fish, seafood, mutton, beef, and pork. However, EGGS are completely allowed. Dairy is allowed.';
+      } else if (pref === 'Keto') {
+        dietRule = 'CRITICAL RULE: The user is on a KETO diet. You MUST strictly limit carbohydrates to under 20g-30g per day. Focus heavily on high healthy fats, moderate protein, and ultra-low carb vegetables. Exclude all sugar, grains, high-carb fruits, and starchy vegetables.';
       } else {
-        dietRule = 'Diet Preference: Non-Vegetarian / Balanced. You may include meat, chicken, fish, seafood, eggs, and dairy where appropriate.';
+        dietRule = `Diet Preference: ${pref}. Please ensure all meals strictly adhere to a ${pref} diet.`;
       }
       const bmi = onboarding.height && onboarding.weight ? (onboarding.weight / (onboarding.height / 100) ** 2).toFixed(1) : 'Unknown';
       const prompt = `
@@ -1238,8 +1383,9 @@ export default function App() {
       const rawText = resData.candidates?.[0]?.content?.parts?.[0]?.text;
       
       if (rawText) {
-          let clean = rawText.trim();
-          if (clean.startsWith("\`\`\`json")) clean = clean.replace(/^\`\`\`json\\n?/, '').replace(/\\n?\`\`\`$/, '').trim();
+          const match = rawText.match(/\{[\s\S]*\}/);
+          if (!match) throw new Error("No JSON object found in translation response");
+          let clean = match[0];
           let newPlan = JSON.parse(clean);
           newPlan._lang = code;
           setDietPlan(newPlan);
@@ -1253,22 +1399,18 @@ export default function App() {
   };
   const handleLanguageChange = async lang => {
     const code = lang.toLowerCase();
+    // Save to localStorage so it persists on reload
     localStorage.setItem('vitascan_lang', code);
-    i18n.changeLanguage(code);
+    // setActiveLang triggers React re-render → t() immediately returns new language strings
+    setActiveLang(code);
     if (user) {
-      setUser(prev => prev ? {
-        ...prev,
-        preferredLanguage: code
-      } : null);
+      setUser(prev => prev ? { ...prev, preferredLanguage: code } : null);
     }
-    
     // Auto-translate the existing diet plan so photos don't change
     translateExistingData(code);
     try {
       if (user?.id) {
-        const {
-          error
-        } = await supabase.from('profiles').update({
+        const { error } = await supabase.from('profiles').update({
           preferred_language: code
         }).eq('id', user.id);
         if (error) throw error;
@@ -1402,7 +1544,7 @@ export default function App() {
             await supabase.from('weight_records').insert([{
               user_id: user.id,
               weight: onboarding.weight,
-              timestamp: new Date().toISOString()
+              timestamp: Date.now()
             }]);
           }
         } catch (weightErr) {
@@ -1551,6 +1693,39 @@ export default function App() {
               <span>{authStatusMsg.text}</span>
             </div>}
 
+          {isOtpVerification ? (
+            <form onSubmit={handleVerifyOtp} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div className="auth-form-group">
+                <label className="input-label">Enter 6-Digit Code</label>
+                <input type="text" inputMode="numeric" pattern="[0-9]*" maxLength="6" required className="form-input" placeholder="123456" value={otpCode} onChange={e => setOtpCode(e.target.value)} disabled={isAuthLoading} style={{ letterSpacing: '0.5em', textAlign: 'center', fontSize: '1.2rem', fontWeight: 600 }} />
+              </div>
+              <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '8px' }} disabled={isAuthLoading || otpCode.length < 6}>
+                {isAuthLoading ? "Verifying..." : "Verify Code"}
+              </button>
+              <button 
+                type="button" 
+                className="btn" 
+                style={{ 
+                  width: '100%', 
+                  marginTop: '8px',
+                  background: resendCountdown > 0 ? 'rgba(0,0,0,0.02)' : 'transparent',
+                  border: '1px solid var(--border-color)',
+                  color: resendCountdown > 0 ? 'var(--text-muted)' : 'var(--text-main)',
+                  fontWeight: 600,
+                  fontSize: '0.9rem',
+                  padding: '12px'
+                }} 
+                onClick={handleResendOtp} 
+                disabled={isAuthLoading || resendCountdown > 0}
+              >
+                {resendCountdown > 0 ? `Resend Code in ${resendCountdown}s` : "Resend Code"}
+              </button>
+              <button type="button" className="btn-link" style={{ marginTop: '16px', textAlign: 'center', fontSize: '0.9rem', width: '100%' }} onClick={() => { setIsOtpVerification(false); setAuthStatusMsg({ type: '', text: '' }); }} disabled={isAuthLoading}>
+                Back to Sign Up
+              </button>
+            </form>
+          ) : (
+          <>
           <form onSubmit={handleLoginSubmit} style={{
           display: 'flex',
           flexDirection: 'column',
@@ -1629,6 +1804,8 @@ export default function App() {
         }} disabled={isAuthLoading}>
             {authForm.isSignup ? "Already have an account? Sign In" : "Don't have an account? Create one"}
           </button>
+          </>
+          )}
         </div>
       </div>;
   }
@@ -2609,6 +2786,9 @@ export default function App() {
           }} onClick={() => {
             setScanStatus('idle');
             setScanResult(null);
+            setScanImage(null);
+            setScanImagePreview(null);
+            setScanInput('');
           }}>{t("scan_another_food_item")}</button>
 
                 {scanResult.confidence !== undefined && scanResult.confidence < 0.7 && <div className="glass-card" style={{
@@ -2767,7 +2947,7 @@ export default function App() {
               marginBottom: '16px'
             }}>{t("log_this_scanned_meal")}</h3>
                   <div className="grid-4">
-                    {['Breakfast', 'Lunch', 'Dinner', 'Snack'].map(type => <button key={type} className="btn btn-secondary" onClick={() => logScannedMeal(type)}>{type}</button>)}
+                    {[{key:'Breakfast',label:t('breakfast')},{key:'Lunch',label:t('lunch')},{key:'Dinner',label:t('dinner')},{key:'Snack',label:t('snack')}].map(({key,label}) => <button key={key} className="btn btn-secondary" onClick={() => logScannedMeal(key)}>{label}</button>)}
                   </div>
                 </div>
 
@@ -3513,7 +3693,7 @@ export default function App() {
       {/* Manual Meal Modal */}
       {showAddMealModal && <div className="modal-overlay">
           <div className="glass-card modal-container">
-            <h3>{t("log")}{selectedMealType}{t("meal")}</h3>
+            <h3>{t("log")} {t(selectedMealType.toLowerCase())} {t("meal")}</h3>
             <form onSubmit={handleAddManualMeal} style={{
           display: 'flex',
           flexDirection: 'column',
