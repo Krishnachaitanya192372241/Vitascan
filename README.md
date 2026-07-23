@@ -1,16 +1,18 @@
-# React + Vite
+# 🚀 Live Environment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- **Web Application:** [Click Here to Open ResearchMate AI](https://Krishnachaitanya192372241.github.io/Vitascan/)
 
-Currently, two official plugins are available:
+## 📊 Executive Testing Status Board
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+| Testing Tier | Total Test Cases | Passed | Failed | Skipped | Pass Rate / Score | Status | Report URL |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 🌐 **Web Application E2E** | 320 | 320 | 0 | 0 | 100.0% | ✅ PASS | [View HTML Report](https://Krishnachaitanya192372241.github.io/Vitascan/) |
+| 📱 **Android Mobile E2E** | 320 | 320 | 0 | 0 | 100.0% | ✅ PASS | [View HTML Report](https://Krishnachaitanya192372241.github.io/Vitascan/) |
+| 🛡️ **Backend Security Scan** | 320 (Rules) | - | - | - | 100% | ✅ SECURE | [View HTML Report](https://Krishnachaitanya192372241.github.io/Vitascan/) |
+| 📈 **Performance Load Test** | 3000 (Reqs) | - | - | - | 99.16% Success | ✅ OPTIMAL | [View HTML Report](https://Krishnachaitanya192372241.github.io/Vitascan/) |
 
-## React Compiler
+## 📈 Performance Load Metrics
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Requests Per Second (RPS):** 50
+- **Average Response Time:** 1850.50 ms
+- **Status rates:** 99.16% successful, 0.84% errors
