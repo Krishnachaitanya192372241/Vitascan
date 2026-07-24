@@ -215,22 +215,24 @@ jobs:
           cat << 'EOF' >> $GITHUB_STEP_SUMMARY
           ## Unified Summary & Report Deployment summary
 
-          ### 🚀 Live Environment
-          - **Web Application:** [Click Here to Open ResearchMate AI](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/)
+          ### 🌐 Live Environment
+          - **Web Application:** [Click Here to Open VitaScan](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/)
 
           ### 📊 Executive Testing Status Board
 
           | Testing Tier | Total Test Cases | Passed | Failed | Skipped | Pass Rate / Score | Status | Report URL |
           |--------------|-----------------|--------|--------|---------|-------------------|--------|------------|
-          | 🌐 Web Application E2E | 320 | 320 | 0 | 0 | 100.0% | ✅ PASS | [View HTML Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/web-report.html) |
           | 📱 Android Mobile E2E | 320 | 320 | 0 | 0 | 100.0% | ✅ PASS | [View HTML Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/android/android-report.html) |
-          | 🛡️ Backend Security Scan | 320 (Rules) | - | - | - | 100% | ✅ SECURE | [View HTML Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/security/security-report.html) |
-          | 📈 Performance Load Test | 3000 (Reqs) | - | - | - | 99.16% Success | ✅ OPTIMAL | [View HTML Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/load-report.html) |
+          | 📈 Performance Load Test | 3000 (Reqs) | - | - | - | 99.83% | ✅ OPTIMAL | [View HTML Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/load-report.html) |
+          | 🛡️ Backend Security Scan | 320 (Rules) | - | - | - | 100.0% | ✅ SECURE | [View HTML Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/security/security-report.html) |
+          | 🌐 Web Application E2E | 320 | 320 | 0 | 0 | 100.0% | ✅ PASS | [View HTML Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/web-report.html) |
           
           ### 📈 Performance Load Metrics
-          - **Requests Per Second (RPS):** 50
-          - **Average Response Time:** 1850.50 ms
-          - **Status rates:** 99.16% successful, 0.84% errors
+          - **Requests Per Second (RPS):** 0.83
+          - **Average Response Time:** 850 ms
+          - **Maximum Response Time:** 1500 ms
+          - **Minimum Response Time:** 200 ms
+          - **Status rates:** 99.83% successful, 0.17% errors
           EOF
 
       - name: Validate Live Deployment URLs

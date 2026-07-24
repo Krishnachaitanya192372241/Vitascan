@@ -565,6 +565,24 @@ export default function App() {
       type: '',
       text: ''
     });
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(authForm.email)) {
+      setAuthStatusMsg({ type: 'error', text: 'Please enter a valid email address.' });
+      setIsAuthLoading(false);
+      return;
+    }
+
+    const emailLower = authForm.email.toLowerCase();
+    const commonTypos = ['@gail.com', '@gmial.com', '@gamil.com', '@gmal.com', '@gmail.co', '@yahoo.co', '@yaho.com', '@hotmai.com'];
+    for (const typo of commonTypos) {
+      if (emailLower.endsWith(typo)) {
+        setAuthStatusMsg({ type: 'error', text: `Did you mean @gmail.com or similar? Please type your email correctly.` });
+        setIsAuthLoading(false);
+        return;
+      }
+    }
+
     try {
       if (authForm.isSignup) {
         const {
@@ -596,6 +614,17 @@ export default function App() {
           setIsAuthLoading(false);
           return;
         }
+        
+        // Catch already registered emails when Supabase "Prevent email enumeration" is ON
+        if (data.user && data.user.identities && data.user.identities.length === 0) {
+          setAuthStatusMsg({
+            type: 'error',
+            text: 'This email is already registered. Please click "Already have an account? Sign In" below.'
+          });
+          setIsAuthLoading(false);
+          return;
+        }
+
         // Check if email confirmation is required
         if (data.user && !data.user.email_confirmed_at && data.session === null) {
           setAuthStatusMsg({
