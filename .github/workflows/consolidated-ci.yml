@@ -168,7 +168,7 @@ jobs:
       - name: Build VitaScan Web App
         run: |
           npm install
-          npm run build
+          npm run build -- --base=/${{ github.event.repository.name }}/
 
       - name: Download all artifacts
         uses: actions/download-artifact@v4
