@@ -166,6 +166,9 @@ jobs:
           node-version: '20'
           
       - name: Build VitaScan Web App
+        env:
+          VITE_SUPABASE_URL: "https://sbohfdmnhjsxvdhyryth.supabase.co"
+          VITE_SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNib2hmZG1uaGpzeHZkaHlyeXRoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAwNDY0MzAsImV4cCI6MjA5NTYyMjQzMH0.qCQYHLJdbF3I3AVyWBBJyF3nJVt5gL9-24HG7_uOvQc"
         run: |
           npm install
           npm run build -- --base=./
