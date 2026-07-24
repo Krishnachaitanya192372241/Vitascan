@@ -158,55 +158,42 @@ jobs:
     runs-on: ubuntu-latest
     if: always()
     steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Build VitaScan Web App
+        working-directory: frontend
+        run: |
+          npm install
+          npm run build
+
       - name: Download all artifacts
         uses: actions/download-artifact@v4
         continue-on-error: true
 
-      - name: Generate Unified HTML Portal
+      - name: Prepare Deployment Directory
         run: |
-          mkdir -p public
-          # Copy reports into public portal with unique names to prevent overwriting
-          cp -r web-e2e-reports/HTML/* public/ || true
+          # Copy reports into the Vite build directory so they are hosted alongside the real web app
+          # We use specific paths to ensure they match exactly what the Markdown summary and validation loop expect
+          cp -r web-e2e-reports/HTML/* frontend/dist/ || true
           
-          mkdir -p public/android
-          cp -r android-e2e-reports/* public/android/ || true
+          mkdir -p frontend/dist/android
+          cp -r android-e2e-reports/* frontend/dist/android/ || true
           
-          mkdir -p public/security
-          cp -r security-reports/* public/security/ || true
+          mkdir -p frontend/dist/security
+          cp -r security-reports/* frontend/dist/security/ || true
           
-          cp -r load-reports/* public/ || true
-          
-          # Create portal index
-          cat << 'EOF' > public/index.html
-          <!DOCTYPE html>
-          <html>
-          <head>
-              <title>ResearchMate AI - CI/CD Reports</title>
-              <style>
-                  body { background-color: #0f172a; color: #f8fafc; font-family: sans-serif; padding: 2rem; }
-                  a { color: #38bdf8; text-decoration: none; font-size: 1.2rem; display: block; margin: 1rem 0; }
-                  a:hover { color: #7dd3fc; text-decoration: underline; }
-                  .container { max-width: 600px; margin: 0 auto; background: #1e293b; padding: 2rem; border-radius: 12px; }
-              </style>
-          </head>
-          <body>
-              <div class="container">
-                  <h1>🚀 ResearchMate AI Reports</h1>
-                  <p>Select a test report below to view the full details:</p>
-                  <a href="web-report.html">🌐 Web Application E2E Report</a>
-                  <a href="android/android-report.html">📱 Android Mobile E2E Report</a>
-                  <a href="security/security-report.html">🛡️ Backend Security Scan Report</a>
-                  <a href="load-report.html">📈 Performance Load Test Report</a>
-              </div>
-          </body>
-          </html>
-          EOF
+          cp -r load-reports/* frontend/dist/ || true
 
       - name: Deploy to GitHub Pages Branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./frontend/dist
           force_orphan: true
         continue-on-error: true
 
