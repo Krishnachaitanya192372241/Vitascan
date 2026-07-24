@@ -191,30 +191,37 @@ jobs:
           
           cp -r load-reports/* dist/ || true
 
-      - name: Deploy to GitHub Pages Branch
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          force_orphan: true
-        continue-on-error: true
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
+      - name: Generate SPA 404 Fallback
+        run: cp dist/index.html dist/404.html
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        
       - name: Generate Executive Summary Board
         run: |
           cat << 'EOF' >> $GITHUB_STEP_SUMMARY
           ## Unified Summary & Report Deployment summary
 
           ### 🌐 Live Environment
-          - **Web Application:** [Click Here to Open VitaScan](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/)
+          - **Web Application:** [Click Here to Open VitaScan](${{ steps.deployment.outputs.page_url }})
 
           ### 📊 Executive Testing Status Board
 
           | Testing Tier | Total Test Cases | Passed | Failed | Skipped | Pass Rate / Score | Status | Report URL |
           |--------------|-----------------|--------|--------|---------|-------------------|--------|------------|
-          | 📱 Android Mobile E2E | 320 | 320 | 0 | 0 | 100.0% | ✅ PASS | [View HTML Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/android/android-report.html) |
-          | 📈 Performance Load Test | 3000 (Reqs) | - | - | - | 99.83% | ✅ OPTIMAL | [View HTML Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/load-report.html) |
-          | 🛡️ Backend Security Scan | 320 (Rules) | - | - | - | 100.0% | ✅ SECURE | [View HTML Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/security/security-report.html) |
-          | 🌐 Web Application E2E | 320 | 320 | 0 | 0 | 100.0% | ✅ PASS | [View HTML Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/web-report.html) |
+          | 📱 Android Mobile E2E | 320 | 320 | 0 | 0 | 100.0% | ✅ PASS | [View HTML Report](${{ steps.deployment.outputs.page_url }}android/android-report.html) |
+          | 📈 Performance Load Test | 3000 (Reqs) | - | - | - | 99.83% | ✅ OPTIMAL | [View HTML Report](${{ steps.deployment.outputs.page_url }}load-report.html) |
+          | 🛡️ Backend Security Scan | 320 (Rules) | - | - | - | 100.0% | ✅ SECURE | [View HTML Report](${{ steps.deployment.outputs.page_url }}security/security-report.html) |
+          | 🌐 Web Application E2E | 320 | 320 | 0 | 0 | 100.0% | ✅ PASS | [View HTML Report](${{ steps.deployment.outputs.page_url }}web-report.html) |
           
           ### 📈 Performance Load Metrics
           - **Requests Per Second (RPS):** 0.83
@@ -226,52 +233,37 @@ jobs:
 
       - name: Validate Live Deployment URLs
         run: |
-          echo "Waiting for GitHub Pages background deployment to complete..."
-          BASE_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          BASE_URL="${{ steps.deployment.outputs.page_url }}"
           echo "Target Base URL: $BASE_URL"
           
-          # List of all report URLs to validate
           URLS=(
-            "$BASE_URL/web-report.html"
-            "$BASE_URL/android/android-report.html"
-            "$BASE_URL/security/security-report.html"
-            "$BASE_URL/load-report.html"
+            "$BASE_URL"
+            "${BASE_URL}index.html"
+            "${BASE_URL}web-report.html"
+            "${BASE_URL}android/android-report.html"
+            "${BASE_URL}security/security-report.html"
+            "${BASE_URL}load-report.html"
           )
-          
-          # GitHub Pages can take a few minutes to update after a push to gh-pages branch.
-          # We will poll for up to 5 minutes (30 attempts * 10 seconds).
-          MAX_RETRIES=30
           
           for URL in "${URLS[@]}"; do
             echo "Validating URL: $URL"
-            RETRY_COUNT=0
-            SUCCESS=0
-            
-            while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
-              HTTP_CODE=$(curl -s -L -o /dev/null -w "%{http_code}" "$URL")
-              if [ "$HTTP_CODE" -eq 200 ]; then
-                echo "✅ URL is live and returned HTTP 200: $URL"
-                SUCCESS=1
-                break
-              fi
-              echo "URL returned HTTP $HTTP_CODE. Waiting 10 seconds for Pages to finish deploying... ($RETRY_COUNT/$MAX_RETRIES)"
-              sleep 10
-              RETRY_COUNT=$((RETRY_COUNT+1))
-            done
-            
-            if [ $SUCCESS -eq 0 ]; then
-              echo "❌ ERROR: URL returned 404 after 5 minutes of waiting: $URL"
-              echo "🚨 Workflow failed because the report links are returning a 404!"
-              echo "Please verify that:"
-              echo "1. GitHub Pages is enabled in Settings -> Pages."
-              echo "2. 'Build and deployment' Source is set to 'Deploy from a branch'."
-              echo "3. The selected branch is 'gh-pages' and folder is '/ (root)'."
+            HTTP_CODE=$(curl -s -L -o /dev/null -w "%{http_code}" "$URL")
+            if [ "$HTTP_CODE" -eq 200 ]; then
+              echo "✅ URL is live and returned HTTP 200: $URL"
+            else
+              echo "❌ ERROR: URL returned $HTTP_CODE: $URL"
               exit 1
             fi
           done
           
-          echo "✅ All final report URLs verified with HTTP 200!"
-          echo "Final URLs printed below:"
-          for URL in "${URLS[@]}"; do
-            echo "$URL"
-          done
+          # Verify JS bundles are loaded in index.html
+          INDEX_HTML=$(curl -s -L "${BASE_URL}index.html")
+          if ! echo "$INDEX_HTML" | grep -q "script.*src="; then
+            echo "❌ ERROR: JavaScript bundle missing from index.html! Blank page imminent."
+            exit 1
+          fi
+          
+          echo "✅ Frontend successfully deployed"
+          echo "Deployment URL: $BASE_URL"
+          echo "GitHub Pages URL: $BASE_URL"
+          echo "Verification complete"
