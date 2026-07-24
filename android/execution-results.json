@@ -1,0 +1,2562 @@
+[
+  {
+    "id": "TC_001",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 1",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2236
+  },
+  {
+    "id": "TC_002",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 2",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2481
+  },
+  {
+    "id": "TC_003",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 3",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 4396
+  },
+  {
+    "id": "TC_004",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 4",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5552
+  },
+  {
+    "id": "TC_005",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 5",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3046
+  },
+  {
+    "id": "TC_006",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 6",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1613
+  },
+  {
+    "id": "TC_007",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 7",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5044
+  },
+  {
+    "id": "TC_008",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 8",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1074
+  },
+  {
+    "id": "TC_009",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 9",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1485
+  },
+  {
+    "id": "TC_010",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 10",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3267
+  },
+  {
+    "id": "TC_011",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 11",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4241
+  },
+  {
+    "id": "TC_012",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 12",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 3879
+  },
+  {
+    "id": "TC_013",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 13",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3330
+  },
+  {
+    "id": "TC_014",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 14",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4225
+  },
+  {
+    "id": "TC_015",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 15",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1603
+  },
+  {
+    "id": "TC_016",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 16",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1031
+  },
+  {
+    "id": "TC_017",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 17",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3835
+  },
+  {
+    "id": "TC_018",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 18",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1787
+  },
+  {
+    "id": "TC_019",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 19",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5661
+  },
+  {
+    "id": "TC_020",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 20",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4668
+  },
+  {
+    "id": "TC_021",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 21",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 2952
+  },
+  {
+    "id": "TC_022",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 22",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5449
+  },
+  {
+    "id": "TC_023",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 23",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2423
+  },
+  {
+    "id": "TC_024",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 24",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 4656
+  },
+  {
+    "id": "TC_025",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 25",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2392
+  },
+  {
+    "id": "TC_026",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 26",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3262
+  },
+  {
+    "id": "TC_027",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 27",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 5691
+  },
+  {
+    "id": "TC_028",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 28",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2644
+  },
+  {
+    "id": "TC_029",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 29",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1558
+  },
+  {
+    "id": "TC_030",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 30",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 3831
+  },
+  {
+    "id": "TC_031",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 31",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4228
+  },
+  {
+    "id": "TC_032",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 32",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4701
+  },
+  {
+    "id": "TC_033",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 33",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 2832
+  },
+  {
+    "id": "TC_034",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 34",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3239
+  },
+  {
+    "id": "TC_035",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 35",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5322
+  },
+  {
+    "id": "TC_036",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 36",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 2763
+  },
+  {
+    "id": "TC_037",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 37",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3299
+  },
+  {
+    "id": "TC_038",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 38",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5308
+  },
+  {
+    "id": "TC_039",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 39",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 4186
+  },
+  {
+    "id": "TC_040",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 40",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3640
+  },
+  {
+    "id": "TC_041",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 41",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5323
+  },
+  {
+    "id": "TC_042",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 42",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 3069
+  },
+  {
+    "id": "TC_043",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 43",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1647
+  },
+  {
+    "id": "TC_044",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 44",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3126
+  },
+  {
+    "id": "TC_045",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 45",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1975
+  },
+  {
+    "id": "TC_046",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 46",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3325
+  },
+  {
+    "id": "TC_047",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 47",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3649
+  },
+  {
+    "id": "TC_048",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 48",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 2274
+  },
+  {
+    "id": "TC_049",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 49",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4130
+  },
+  {
+    "id": "TC_050",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 50",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5235
+  },
+  {
+    "id": "TC_051",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 51",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1180
+  },
+  {
+    "id": "TC_052",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 52",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3765
+  },
+  {
+    "id": "TC_053",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 53",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1607
+  },
+  {
+    "id": "TC_054",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 54",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 2595
+  },
+  {
+    "id": "TC_055",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 55",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3629
+  },
+  {
+    "id": "TC_056",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 56",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3626
+  },
+  {
+    "id": "TC_057",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 57",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 3141
+  },
+  {
+    "id": "TC_058",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 58",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4178
+  },
+  {
+    "id": "TC_059",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 59",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5558
+  },
+  {
+    "id": "TC_060",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 60",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 4614
+  },
+  {
+    "id": "TC_061",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 61",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3374
+  },
+  {
+    "id": "TC_062",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 62",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1324
+  },
+  {
+    "id": "TC_063",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 63",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 2980
+  },
+  {
+    "id": "TC_064",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 64",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2930
+  },
+  {
+    "id": "TC_065",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 65",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5120
+  },
+  {
+    "id": "TC_066",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 66",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 5736
+  },
+  {
+    "id": "TC_067",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 67",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4780
+  },
+  {
+    "id": "TC_068",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 68",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5029
+  },
+  {
+    "id": "TC_069",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 69",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 4623
+  },
+  {
+    "id": "TC_070",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 70",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3481
+  },
+  {
+    "id": "TC_071",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 71",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1016
+  },
+  {
+    "id": "TC_072",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 72",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 2206
+  },
+  {
+    "id": "TC_073",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 73",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1452
+  },
+  {
+    "id": "TC_074",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 74",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2968
+  },
+  {
+    "id": "TC_075",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 75",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 5914
+  },
+  {
+    "id": "TC_076",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 76",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2686
+  },
+  {
+    "id": "TC_077",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 77",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3451
+  },
+  {
+    "id": "TC_078",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 78",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 4845
+  },
+  {
+    "id": "TC_079",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 79",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1608
+  },
+  {
+    "id": "TC_080",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 80",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3455
+  },
+  {
+    "id": "TC_081",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 81",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 3135
+  },
+  {
+    "id": "TC_082",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 82",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5013
+  },
+  {
+    "id": "TC_083",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 83",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2171
+  },
+  {
+    "id": "TC_084",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 84",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 4645
+  },
+  {
+    "id": "TC_085",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 85",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2946
+  },
+  {
+    "id": "TC_086",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 86",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5330
+  },
+  {
+    "id": "TC_087",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 87",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 3694
+  },
+  {
+    "id": "TC_088",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 88",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4103
+  },
+  {
+    "id": "TC_089",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 89",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4629
+  },
+  {
+    "id": "TC_090",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 90",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 4451
+  },
+  {
+    "id": "TC_091",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 91",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1348
+  },
+  {
+    "id": "TC_092",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 92",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2212
+  },
+  {
+    "id": "TC_093",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 93",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 3689
+  },
+  {
+    "id": "TC_094",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 94",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5021
+  },
+  {
+    "id": "TC_095",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 95",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2583
+  },
+  {
+    "id": "TC_096",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 96",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 4457
+  },
+  {
+    "id": "TC_097",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 97",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3000
+  },
+  {
+    "id": "TC_098",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 98",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4941
+  },
+  {
+    "id": "TC_099",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 99",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 3317
+  },
+  {
+    "id": "TC_100",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 100",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4317
+  },
+  {
+    "id": "TC_101",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 101",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5857
+  },
+  {
+    "id": "TC_102",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 102",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 3375
+  },
+  {
+    "id": "TC_103",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 103",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2527
+  },
+  {
+    "id": "TC_104",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 104",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2187
+  },
+  {
+    "id": "TC_105",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 105",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 2870
+  },
+  {
+    "id": "TC_106",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 106",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2199
+  },
+  {
+    "id": "TC_107",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 107",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1516
+  },
+  {
+    "id": "TC_108",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 108",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 2797
+  },
+  {
+    "id": "TC_109",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 109",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2321
+  },
+  {
+    "id": "TC_110",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 110",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2166
+  },
+  {
+    "id": "TC_111",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 111",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 5912
+  },
+  {
+    "id": "TC_112",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 112",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2601
+  },
+  {
+    "id": "TC_113",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 113",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2842
+  },
+  {
+    "id": "TC_114",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 114",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1161
+  },
+  {
+    "id": "TC_115",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 115",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5793
+  },
+  {
+    "id": "TC_116",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 116",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3389
+  },
+  {
+    "id": "TC_117",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 117",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 2004
+  },
+  {
+    "id": "TC_118",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 118",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1413
+  },
+  {
+    "id": "TC_119",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 119",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4602
+  },
+  {
+    "id": "TC_120",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 120",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1010
+  },
+  {
+    "id": "TC_121",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 121",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2025
+  },
+  {
+    "id": "TC_122",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 122",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3018
+  },
+  {
+    "id": "TC_123",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 123",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 2309
+  },
+  {
+    "id": "TC_124",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 124",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3178
+  },
+  {
+    "id": "TC_125",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 125",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2780
+  },
+  {
+    "id": "TC_126",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 126",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 3962
+  },
+  {
+    "id": "TC_127",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 127",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4299
+  },
+  {
+    "id": "TC_128",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 128",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4237
+  },
+  {
+    "id": "TC_129",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 129",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 2885
+  },
+  {
+    "id": "TC_130",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 130",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5789
+  },
+  {
+    "id": "TC_131",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 131",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5543
+  },
+  {
+    "id": "TC_132",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 132",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1201
+  },
+  {
+    "id": "TC_133",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 133",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1950
+  },
+  {
+    "id": "TC_134",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 134",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2421
+  },
+  {
+    "id": "TC_135",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 135",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 5350
+  },
+  {
+    "id": "TC_136",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 136",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5006
+  },
+  {
+    "id": "TC_137",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 137",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2739
+  },
+  {
+    "id": "TC_138",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 138",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 5517
+  },
+  {
+    "id": "TC_139",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 139",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5829
+  },
+  {
+    "id": "TC_140",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 140",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5459
+  },
+  {
+    "id": "TC_141",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 141",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 2392
+  },
+  {
+    "id": "TC_142",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 142",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5671
+  },
+  {
+    "id": "TC_143",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 143",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1160
+  },
+  {
+    "id": "TC_144",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 144",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 5946
+  },
+  {
+    "id": "TC_145",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 145",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4538
+  },
+  {
+    "id": "TC_146",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 146",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3465
+  },
+  {
+    "id": "TC_147",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 147",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1238
+  },
+  {
+    "id": "TC_148",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 148",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3734
+  },
+  {
+    "id": "TC_149",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 149",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3372
+  },
+  {
+    "id": "TC_150",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 150",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 2213
+  },
+  {
+    "id": "TC_151",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 151",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2669
+  },
+  {
+    "id": "TC_152",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 152",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2138
+  },
+  {
+    "id": "TC_153",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 153",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1786
+  },
+  {
+    "id": "TC_154",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 154",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1255
+  },
+  {
+    "id": "TC_155",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 155",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1313
+  },
+  {
+    "id": "TC_156",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 156",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 4998
+  },
+  {
+    "id": "TC_157",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 157",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3771
+  },
+  {
+    "id": "TC_158",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 158",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2918
+  },
+  {
+    "id": "TC_159",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 159",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 2470
+  },
+  {
+    "id": "TC_160",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 160",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3110
+  },
+  {
+    "id": "TC_161",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 161",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1421
+  },
+  {
+    "id": "TC_162",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 162",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 3584
+  },
+  {
+    "id": "TC_163",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 163",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4013
+  },
+  {
+    "id": "TC_164",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 164",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1768
+  },
+  {
+    "id": "TC_165",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 165",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 3413
+  },
+  {
+    "id": "TC_166",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 166",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3879
+  },
+  {
+    "id": "TC_167",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 167",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1058
+  },
+  {
+    "id": "TC_168",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 168",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 2709
+  },
+  {
+    "id": "TC_169",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 169",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3458
+  },
+  {
+    "id": "TC_170",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 170",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3388
+  },
+  {
+    "id": "TC_171",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 171",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 5624
+  },
+  {
+    "id": "TC_172",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 172",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5389
+  },
+  {
+    "id": "TC_173",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 173",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5459
+  },
+  {
+    "id": "TC_174",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 174",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 5949
+  },
+  {
+    "id": "TC_175",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 175",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5206
+  },
+  {
+    "id": "TC_176",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 176",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4174
+  },
+  {
+    "id": "TC_177",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 177",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1872
+  },
+  {
+    "id": "TC_178",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 178",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4370
+  },
+  {
+    "id": "TC_179",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 179",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3588
+  },
+  {
+    "id": "TC_180",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 180",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1508
+  },
+  {
+    "id": "TC_181",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 181",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2793
+  },
+  {
+    "id": "TC_182",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 182",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4875
+  },
+  {
+    "id": "TC_183",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 183",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1618
+  },
+  {
+    "id": "TC_184",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 184",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2322
+  },
+  {
+    "id": "TC_185",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 185",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5884
+  },
+  {
+    "id": "TC_186",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 186",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 5898
+  },
+  {
+    "id": "TC_187",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 187",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2374
+  },
+  {
+    "id": "TC_188",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 188",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5089
+  },
+  {
+    "id": "TC_189",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 189",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 3467
+  },
+  {
+    "id": "TC_190",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 190",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1185
+  },
+  {
+    "id": "TC_191",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 191",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2907
+  },
+  {
+    "id": "TC_192",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 192",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 5289
+  },
+  {
+    "id": "TC_193",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 193",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3305
+  },
+  {
+    "id": "TC_194",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 194",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5072
+  },
+  {
+    "id": "TC_195",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 195",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 3009
+  },
+  {
+    "id": "TC_196",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 196",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4180
+  },
+  {
+    "id": "TC_197",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 197",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2841
+  },
+  {
+    "id": "TC_198",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 198",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1413
+  },
+  {
+    "id": "TC_199",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 199",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3138
+  },
+  {
+    "id": "TC_200",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 200",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1710
+  },
+  {
+    "id": "TC_201",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 201",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 4904
+  },
+  {
+    "id": "TC_202",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 202",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5018
+  },
+  {
+    "id": "TC_203",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 203",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2413
+  },
+  {
+    "id": "TC_204",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 204",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1313
+  },
+  {
+    "id": "TC_205",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 205",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5993
+  },
+  {
+    "id": "TC_206",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 206",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2290
+  },
+  {
+    "id": "TC_207",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 207",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1370
+  },
+  {
+    "id": "TC_208",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 208",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5447
+  },
+  {
+    "id": "TC_209",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 209",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5781
+  },
+  {
+    "id": "TC_210",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 210",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 5615
+  },
+  {
+    "id": "TC_211",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 211",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1941
+  },
+  {
+    "id": "TC_212",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 212",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4391
+  },
+  {
+    "id": "TC_213",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 213",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 4375
+  },
+  {
+    "id": "TC_214",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 214",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5085
+  },
+  {
+    "id": "TC_215",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 215",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3604
+  },
+  {
+    "id": "TC_216",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 216",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 3481
+  },
+  {
+    "id": "TC_217",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 217",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5639
+  },
+  {
+    "id": "TC_218",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 218",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2405
+  },
+  {
+    "id": "TC_219",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 219",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 3750
+  },
+  {
+    "id": "TC_220",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 220",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5346
+  },
+  {
+    "id": "TC_221",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 221",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3206
+  },
+  {
+    "id": "TC_222",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 222",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 5060
+  },
+  {
+    "id": "TC_223",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 223",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5826
+  },
+  {
+    "id": "TC_224",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 224",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2586
+  },
+  {
+    "id": "TC_225",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 225",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 5941
+  },
+  {
+    "id": "TC_226",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 226",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1912
+  },
+  {
+    "id": "TC_227",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 227",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4748
+  },
+  {
+    "id": "TC_228",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 228",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 4730
+  },
+  {
+    "id": "TC_229",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 229",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5109
+  },
+  {
+    "id": "TC_230",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 230",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4485
+  },
+  {
+    "id": "TC_231",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 231",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1887
+  },
+  {
+    "id": "TC_232",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 232",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3236
+  },
+  {
+    "id": "TC_233",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 233",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1820
+  },
+  {
+    "id": "TC_234",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 234",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1197
+  },
+  {
+    "id": "TC_235",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 235",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3977
+  },
+  {
+    "id": "TC_236",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 236",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5960
+  },
+  {
+    "id": "TC_237",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 237",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 4370
+  },
+  {
+    "id": "TC_238",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 238",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2902
+  },
+  {
+    "id": "TC_239",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 239",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3818
+  },
+  {
+    "id": "TC_240",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 240",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 5183
+  },
+  {
+    "id": "TC_241",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 241",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1443
+  },
+  {
+    "id": "TC_242",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 242",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2529
+  },
+  {
+    "id": "TC_243",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 243",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 2010
+  },
+  {
+    "id": "TC_244",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 244",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5066
+  },
+  {
+    "id": "TC_245",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 245",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3557
+  },
+  {
+    "id": "TC_246",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 246",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1315
+  },
+  {
+    "id": "TC_247",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 247",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5290
+  },
+  {
+    "id": "TC_248",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 248",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5889
+  },
+  {
+    "id": "TC_249",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 249",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1586
+  },
+  {
+    "id": "TC_250",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 250",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4241
+  },
+  {
+    "id": "TC_251",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 251",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1831
+  },
+  {
+    "id": "TC_252",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 252",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 5323
+  },
+  {
+    "id": "TC_253",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 253",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3653
+  },
+  {
+    "id": "TC_254",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 254",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5934
+  },
+  {
+    "id": "TC_255",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 255",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 4690
+  },
+  {
+    "id": "TC_256",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 256",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2799
+  },
+  {
+    "id": "TC_257",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 257",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2263
+  },
+  {
+    "id": "TC_258",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 258",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 5222
+  },
+  {
+    "id": "TC_259",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 259",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5897
+  },
+  {
+    "id": "TC_260",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 260",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2509
+  },
+  {
+    "id": "TC_261",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 261",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 5747
+  },
+  {
+    "id": "TC_262",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 262",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3955
+  },
+  {
+    "id": "TC_263",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 263",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1739
+  },
+  {
+    "id": "TC_264",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 264",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 5947
+  },
+  {
+    "id": "TC_265",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 265",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2030
+  },
+  {
+    "id": "TC_266",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 266",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2212
+  },
+  {
+    "id": "TC_267",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 267",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1629
+  },
+  {
+    "id": "TC_268",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 268",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5405
+  },
+  {
+    "id": "TC_269",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 269",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3086
+  },
+  {
+    "id": "TC_270",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 270",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 4775
+  },
+  {
+    "id": "TC_271",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 271",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1054
+  },
+  {
+    "id": "TC_272",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 272",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4474
+  },
+  {
+    "id": "TC_273",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 273",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 4691
+  },
+  {
+    "id": "TC_274",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 274",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3008
+  },
+  {
+    "id": "TC_275",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 275",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2588
+  },
+  {
+    "id": "TC_276",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 276",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1939
+  },
+  {
+    "id": "TC_277",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 277",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4970
+  },
+  {
+    "id": "TC_278",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 278",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1819
+  },
+  {
+    "id": "TC_279",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 279",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 2064
+  },
+  {
+    "id": "TC_280",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 280",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4679
+  },
+  {
+    "id": "TC_281",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 281",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3136
+  },
+  {
+    "id": "TC_282",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 282",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 4849
+  },
+  {
+    "id": "TC_283",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 283",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5505
+  },
+  {
+    "id": "TC_284",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 284",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5891
+  },
+  {
+    "id": "TC_285",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 285",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 2018
+  },
+  {
+    "id": "TC_286",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 286",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5972
+  },
+  {
+    "id": "TC_287",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 287",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1678
+  },
+  {
+    "id": "TC_288",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 288",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 3033
+  },
+  {
+    "id": "TC_289",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 289",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1458
+  },
+  {
+    "id": "TC_290",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 290",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2665
+  },
+  {
+    "id": "TC_291",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 291",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 3504
+  },
+  {
+    "id": "TC_292",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 292",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1423
+  },
+  {
+    "id": "TC_293",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 293",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5128
+  },
+  {
+    "id": "TC_294",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 294",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1177
+  },
+  {
+    "id": "TC_295",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 295",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3788
+  },
+  {
+    "id": "TC_296",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 296",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2980
+  },
+  {
+    "id": "TC_297",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 297",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 4893
+  },
+  {
+    "id": "TC_298",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 298",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1645
+  },
+  {
+    "id": "TC_299",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 299",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4601
+  },
+  {
+    "id": "TC_300",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 300",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 1891
+  },
+  {
+    "id": "TC_301",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 301",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3067
+  },
+  {
+    "id": "TC_302",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 302",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4775
+  },
+  {
+    "id": "TC_303",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 303",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 2153
+  },
+  {
+    "id": "TC_304",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 304",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4246
+  },
+  {
+    "id": "TC_305",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 305",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5166
+  },
+  {
+    "id": "TC_306",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 306",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 3699
+  },
+  {
+    "id": "TC_307",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 307",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 2532
+  },
+  {
+    "id": "TC_308",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 308",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4522
+  },
+  {
+    "id": "TC_309",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 309",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 4430
+  },
+  {
+    "id": "TC_310",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 310",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4569
+  },
+  {
+    "id": "TC_311",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 311",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 3343
+  },
+  {
+    "id": "TC_312",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 312",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 3338
+  },
+  {
+    "id": "TC_313",
+    "module": "Notifications",
+    "name": "VitaScan Mobile — E2E [Notifications]: Validate scenario 313",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4237
+  },
+  {
+    "id": "TC_314",
+    "module": "Data",
+    "name": "VitaScan Mobile — E2E [Data]: Validate scenario 314",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5411
+  },
+  {
+    "id": "TC_315",
+    "module": "Search",
+    "name": "VitaScan Mobile — E2E [Search]: Validate scenario 315",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 3360
+  },
+  {
+    "id": "TC_316",
+    "module": "Settings",
+    "name": "VitaScan Mobile — E2E [Settings]: Validate scenario 316",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 1532
+  },
+  {
+    "id": "TC_317",
+    "module": "Profile",
+    "name": "VitaScan Mobile — E2E [Profile]: Validate scenario 317",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5408
+  },
+  {
+    "id": "TC_318",
+    "module": "UI Validation",
+    "name": "VitaScan Mobile — E2E [UI Validation]: Validate scenario 318",
+    "priority": "High",
+    "status": "PASSED",
+    "duration": 5875
+  },
+  {
+    "id": "TC_319",
+    "module": "Navigation",
+    "name": "VitaScan Mobile — E2E [Navigation]: Validate scenario 319",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 4494
+  },
+  {
+    "id": "TC_320",
+    "module": "Authentication",
+    "name": "VitaScan Mobile — E2E [Authentication]: Validate scenario 320",
+    "priority": "Medium",
+    "status": "PASSED",
+    "duration": 5068
+  }
+]

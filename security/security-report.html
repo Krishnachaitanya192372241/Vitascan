@@ -1,0 +1,2612 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>VitaScan Security DAST Report</title>
+        <style>
+            body { background-color: #0f172a; color: #f8fafc; font-family: -apple-system, system-ui, sans-serif; margin:0; padding:2rem; }
+            .header-gradient { background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%); border-radius: 12px; padding: 2rem; text-align: center; margin-bottom: 2rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5); }
+            .kpi-container { display: flex; gap: 2rem; margin-bottom: 2rem; }
+            .kpi-card { background: #1e293b; border-radius: 12px; padding: 2rem; flex: 1; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.5); border: 1px solid #334155; }
+            .kpi-value { font-size: 3rem; font-weight: bold; margin-bottom: 0.5rem; }
+            .kpi-title { color: #94a3b8; font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight:bold; }
+            .data-table { width: 100%; border-collapse: collapse; background: #1e293b; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.5); }
+            .data-table th { background: #0f172a; color: #94a3b8; padding: 1rem; text-align: left; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; }
+        </style>
+    </head>
+    <body>
+        <div class="header-gradient">
+            <h1 style="margin:0 0 1rem 0; font-size: 2.5rem;">🌐 VitaScan Backend — Security DAST Report</h1>
+            <div style="font-size:0.875rem; opacity:0.9;">Build #8 &bull; 2026-07-24T08:03:31.500Z &bull; Branch: main</div>
+            <div style="margin-top:1rem;"><span style="background:rgba(255,255,255,0.2); padding:6px 12px; border-radius:20px; font-size:0.875rem;">🔗 https://vitascan.live</span></div>
+        </div>
+
+        <div class="kpi-container">
+            <div class="kpi-card">
+                <div class="kpi-value" style="color:#c084fc;">320</div>
+                <div class="kpi-title">TOTAL TESTS</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-value" style="color:#10b981;">320</div>
+                <div class="kpi-title">PASSED</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-value" style="color:#ef4444;">0</div>
+                <div class="kpi-title">FAILED</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-value" style="color:#38bdf8;">100.0%</div>
+                <div class="kpi-title">PASS RATE</div>
+            </div>
+        </div>
+
+        <table class="data-table">
+            <thead>
+                <tr><th>#</th><th>Test Case</th><th>Status</th><th>Duration</th><th>Error</th><th>Screenshot</th></tr>
+            </thead>
+            <tbody>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">1</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 1</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.77s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">2</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 2</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.93s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">3</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 3</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.25s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">4</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 4</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.37s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">5</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 5</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.46s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">6</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 6</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.82s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">7</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 7</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.38s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">8</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 8</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.59s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">9</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 9</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.36s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">10</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 10</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.94s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">11</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 11</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.37s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">12</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 12</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.21s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">13</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 13</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.33s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">14</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 14</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.70s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">15</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 15</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.09s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">16</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 16</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.26s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">17</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 17</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.48s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">18</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 18</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.53s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">19</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 19</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.80s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">20</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 20</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.21s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">21</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 21</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.16s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">22</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 22</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.88s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">23</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 23</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.72s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">24</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 24</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.00s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">25</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 25</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.75s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">26</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 26</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.81s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">27</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 27</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.83s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">28</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 28</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.29s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">29</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 29</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.84s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">30</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 30</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.54s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">31</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 31</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.09s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">32</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 32</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.41s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">33</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 33</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.50s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">34</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 34</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.01s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">35</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 35</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.57s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">36</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 36</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.88s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">37</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 37</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.20s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">38</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 38</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.53s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">39</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 39</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.95s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">40</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 40</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.38s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">41</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 41</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.34s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">42</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 42</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.91s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">43</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 43</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.30s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">44</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 44</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.96s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">45</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 45</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.82s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">46</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 46</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.21s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">47</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 47</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.67s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">48</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 48</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.78s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">49</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 49</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.21s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">50</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 50</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.21s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">51</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 51</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.15s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">52</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 52</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.34s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">53</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 53</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.06s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">54</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 54</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.25s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">55</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 55</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.69s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">56</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 56</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.02s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">57</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 57</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.73s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">58</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 58</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.73s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">59</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 59</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.59s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">60</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 60</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.52s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">61</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 61</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.55s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">62</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 62</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.97s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">63</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 63</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.26s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">64</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 64</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.80s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">65</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 65</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.38s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">66</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 66</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.81s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">67</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 67</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.12s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">68</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 68</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.92s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">69</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 69</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.34s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">70</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 70</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.15s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">71</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 71</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.16s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">72</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 72</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.91s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">73</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 73</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.25s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">74</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 74</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.04s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">75</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 75</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.85s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">76</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 76</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.04s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">77</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 77</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.98s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">78</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 78</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.66s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">79</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 79</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.47s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">80</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 80</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.24s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">81</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 81</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.38s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">82</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 82</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.40s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">83</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 83</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.57s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">84</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 84</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.31s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">85</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 85</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.81s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">86</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 86</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.05s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">87</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 87</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.48s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">88</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 88</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.12s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">89</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 89</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.72s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">90</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 90</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.96s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">91</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 91</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.78s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">92</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 92</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.97s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">93</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 93</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.22s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">94</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 94</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.00s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">95</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 95</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.39s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">96</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 96</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.15s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">97</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 97</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.94s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">98</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 98</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.71s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">99</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 99</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.77s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">100</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 100</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.53s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">101</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 101</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.70s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">102</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 102</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.70s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">103</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 103</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.31s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">104</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 104</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.91s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">105</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 105</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.94s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">106</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 106</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.21s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">107</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 107</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.16s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">108</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 108</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.90s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">109</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 109</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.70s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">110</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 110</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.80s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">111</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 111</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.02s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">112</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 112</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.93s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">113</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 113</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.86s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">114</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 114</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.39s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">115</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 115</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.32s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">116</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 116</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.52s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">117</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 117</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.78s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">118</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 118</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.45s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">119</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 119</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.96s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">120</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 120</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.20s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">121</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 121</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.85s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">122</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 122</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.53s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">123</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 123</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.96s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">124</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 124</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.05s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">125</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 125</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.56s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">126</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 126</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.39s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">127</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 127</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.91s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">128</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 128</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.49s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">129</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 129</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.76s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">130</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 130</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.77s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">131</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 131</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.80s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">132</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 132</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.31s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">133</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 133</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.97s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">134</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 134</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.49s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">135</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 135</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.43s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">136</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 136</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.55s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">137</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 137</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.63s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">138</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 138</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.09s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">139</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 139</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.97s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">140</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 140</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.10s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">141</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 141</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.19s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">142</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 142</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.95s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">143</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 143</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.71s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">144</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 144</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.78s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">145</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 145</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.55s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">146</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 146</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.32s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">147</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 147</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.40s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">148</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 148</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.79s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">149</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 149</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.00s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">150</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 150</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.33s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">151</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 151</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.52s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">152</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 152</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.07s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">153</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 153</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.89s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">154</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 154</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.94s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">155</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 155</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.56s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">156</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 156</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.44s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">157</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 157</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.67s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">158</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 158</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.04s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">159</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 159</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.61s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">160</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 160</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.76s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">161</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 161</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.12s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">162</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 162</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.89s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">163</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 163</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.21s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">164</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 164</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.10s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">165</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 165</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.85s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">166</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 166</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.40s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">167</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 167</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.72s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">168</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 168</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.37s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">169</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 169</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.61s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">170</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 170</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.00s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">171</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 171</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.19s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">172</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 172</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.42s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">173</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 173</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.34s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">174</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 174</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.30s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">175</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 175</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.02s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">176</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 176</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.79s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">177</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 177</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.92s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">178</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 178</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.69s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">179</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 179</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.22s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">180</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 180</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.64s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">181</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 181</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.79s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">182</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 182</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.69s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">183</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 183</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.97s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">184</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 184</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.05s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">185</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 185</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.19s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">186</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 186</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.27s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">187</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 187</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.46s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">188</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 188</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.48s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">189</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 189</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.71s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">190</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 190</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.33s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">191</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 191</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.38s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">192</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 192</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.26s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">193</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 193</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.97s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">194</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 194</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.80s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">195</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 195</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.58s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">196</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 196</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.77s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">197</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 197</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.43s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">198</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 198</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.15s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">199</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 199</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.02s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">200</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 200</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.07s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">201</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 201</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.71s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">202</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 202</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.00s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">203</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 203</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.68s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">204</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 204</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.43s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">205</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 205</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.89s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">206</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 206</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.34s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">207</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 207</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.56s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">208</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 208</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.95s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">209</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 209</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.75s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">210</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 210</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.25s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">211</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 211</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.54s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">212</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 212</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.21s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">213</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 213</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.81s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">214</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 214</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.61s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">215</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 215</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.80s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">216</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 216</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.26s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">217</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 217</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.44s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">218</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 218</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.80s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">219</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 219</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.64s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">220</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 220</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.78s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">221</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 221</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.65s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">222</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 222</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.36s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">223</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 223</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.88s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">224</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 224</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.95s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">225</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 225</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.28s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">226</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 226</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.22s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">227</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 227</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.14s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">228</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 228</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.62s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">229</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 229</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.53s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">230</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 230</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.25s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">231</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 231</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.61s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">232</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 232</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.80s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">233</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 233</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.96s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">234</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 234</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.37s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">235</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 235</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.94s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">236</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 236</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.48s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">237</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 237</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.68s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">238</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 238</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.75s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">239</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 239</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.34s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">240</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 240</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.83s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">241</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 241</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.04s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">242</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 242</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.90s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">243</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 243</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.75s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">244</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 244</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.64s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">245</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 245</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.15s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">246</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 246</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.09s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">247</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 247</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.85s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">248</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 248</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.45s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">249</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 249</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.48s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">250</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 250</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.10s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">251</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 251</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.79s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">252</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 252</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.91s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">253</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 253</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.79s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">254</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 254</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.36s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">255</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 255</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.09s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">256</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 256</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.48s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">257</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 257</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.83s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">258</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 258</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.52s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">259</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 259</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.13s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">260</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 260</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.17s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">261</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 261</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.43s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">262</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 262</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.48s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">263</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 263</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.07s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">264</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 264</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.82s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">265</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 265</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.86s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">266</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 266</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.93s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">267</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 267</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.97s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">268</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 268</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.08s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">269</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 269</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.61s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">270</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 270</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.31s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">271</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 271</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.68s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">272</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 272</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.47s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">273</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 273</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.56s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">274</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 274</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.03s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">275</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 275</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.35s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">276</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 276</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.01s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">277</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 277</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.81s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">278</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 278</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.71s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">279</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 279</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.46s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">280</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 280</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.16s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">281</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 281</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.64s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">282</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 282</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.11s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">283</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 283</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.49s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">284</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 284</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.26s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">285</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 285</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.36s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">286</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 286</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.72s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">287</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 287</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.50s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">288</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 288</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.07s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">289</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 289</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.48s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">290</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 290</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.86s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">291</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 291</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.65s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">292</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 292</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.35s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">293</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 293</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.03s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">294</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 294</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.14s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">295</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 295</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.05s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">296</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 296</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.91s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">297</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 297</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.82s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">298</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 298</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.23s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">299</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 299</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.60s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">300</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 300</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.57s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">301</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 301</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.89s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">302</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 302</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.00s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">303</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 303</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.59s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">304</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 304</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">4.32s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">305</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 305</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.09s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">306</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 306</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.38s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">307</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 307</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.92s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">308</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 308</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.38s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">309</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 309</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.77s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">310</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 310</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">1.55s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">311</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 311</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.72s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">312</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Functional API]: Validate security rule 312</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.99s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">313</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Performance]: Validate security rule 313</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.87s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">314</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [DAST]: Validate security rule 314</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">2.20s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">315</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authentication]: Validate security rule 315</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.11s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">316</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Authorization]: Validate security rule 316</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">5.37s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">317</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Input Validation]: Validate security rule 317</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.37s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">318</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Injection]: Validate security rule 318</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">0.60s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">319</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Business Logic]: Validate security rule 319</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.66s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #334155;">
+            <td style="padding:1rem;">320</td>
+            <td style="padding:1rem; color:#e2e8f0;">Security — E2E [Configuration]: Validate security rule 320</td>
+            <td style="padding:1rem;"><span style="background:#059669;color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:bold;">✅ PASS</span></td>
+            <td style="padding:1rem;color:#cbd5e1;">3.66s</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+            <td style="padding:1rem;color:#ef4444;">—</td>
+        </tr></tbody>
+        </table>
+    </body>
+    </html>
+    
