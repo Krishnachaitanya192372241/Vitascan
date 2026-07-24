@@ -166,7 +166,7 @@ jobs:
         run: |
           mkdir -p public
           # Copy reports into public portal with unique names to prevent overwriting
-          cp -r web-e2e-reports/* public/ || true
+          cp -r web-e2e-reports/HTML/* public/ || true
           
           mkdir -p public/android
           cp -r android-e2e-reports/* public/android/ || true
