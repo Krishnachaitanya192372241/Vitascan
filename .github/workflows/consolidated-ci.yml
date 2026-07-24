@@ -33,6 +33,7 @@ jobs:
         run: node orchestrator.js
       - name: Upload Web Artifacts
         uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: web-e2e-reports
           path: Test Results/
@@ -62,8 +63,10 @@ jobs:
           cp -r "Test Results/HTML/"* reports/latest/ || true
           cp -r "Test Results/Excel/"* reports/latest/ || true
           cp -r "Test Results/JSON/"* reports/latest/ || true
+        if: always()
       - name: Upload Android Artifacts
         uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: android-e2e-reports
           path: reports/latest/
@@ -83,6 +86,7 @@ jobs:
           node generate-audit-reports.js
       - name: Upload Security Artifacts
         uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: security-reports
           path: security-assessment/Vulnerability Test Results/
@@ -143,6 +147,7 @@ jobs:
           EOF
       - name: Upload Load Artifacts
         uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: load-reports
           path: Load Test Results/
