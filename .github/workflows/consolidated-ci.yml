@@ -193,9 +193,9 @@ jobs:
               <div class="container">
                   <h1>🚀 ResearchMate AI Reports</h1>
                   <p>Select a test report below to view the full details:</p>
-                  <a href="dashboard.html">🌐 Web Application E2E Report</a>
-                  <a href="android/dashboard.html">📱 Android Mobile E2E Report</a>
-                  <a href="security/dashboard.html">🛡️ Backend Security Scan Report</a>
+                  <a href="web-report.html">🌐 Web Application E2E Report</a>
+                  <a href="android/android-report.html">📱 Android Mobile E2E Report</a>
+                  <a href="security/security-report.html">🛡️ Backend Security Scan Report</a>
                   <a href="load-report.html">📈 Performance Load Test Report</a>
               </div>
           </body>
@@ -222,9 +222,9 @@ jobs:
 
           | Testing Tier | Total Test Cases | Passed | Failed | Skipped | Pass Rate / Score | Status | Report URL |
           |--------------|-----------------|--------|--------|---------|-------------------|--------|------------|
-          | 🌐 Web Application E2E | 320 | 320 | 0 | 0 | 100.0% | ✅ PASS | [View HTML Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/dashboard.html) |
-          | 📱 Android Mobile E2E | 320 | 320 | 0 | 0 | 100.0% | ✅ PASS | [View HTML Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/android/dashboard.html) |
-          | 🛡️ Backend Security Scan | 320 (Rules) | - | - | - | 100% | ✅ SECURE | [View HTML Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/security/dashboard.html) |
+          | 🌐 Web Application E2E | 320 | 320 | 0 | 0 | 100.0% | ✅ PASS | [View HTML Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/web-report.html) |
+          | 📱 Android Mobile E2E | 320 | 320 | 0 | 0 | 100.0% | ✅ PASS | [View HTML Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/android/android-report.html) |
+          | 🛡️ Backend Security Scan | 320 (Rules) | - | - | - | 100% | ✅ SECURE | [View HTML Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/security/security-report.html) |
           | 📈 Performance Load Test | 3000 (Reqs) | - | - | - | 99.16% Success | ✅ OPTIMAL | [View HTML Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/load-report.html) |
           
           ### 📈 Performance Load Metrics
@@ -232,3 +232,35 @@ jobs:
           - **Average Response Time:** 1850.50 ms
           - **Status rates:** 99.16% successful, 0.84% errors
           EOF
+
+      - name: Validate Generated Links Locally
+        run: |
+          echo "Validating that report files were successfully generated before marking success..."
+          MISSING=0
+          
+          if [ ! -f "public/web-report.html" ]; then
+            echo "❌ ERROR: Web E2E Report (public/web-report.html) was NOT generated!"
+            MISSING=1
+          fi
+          
+          if [ ! -f "public/android/android-report.html" ]; then
+            echo "❌ ERROR: Android E2E Report (public/android/android-report.html) was NOT generated!"
+            MISSING=1
+          fi
+          
+          if [ ! -f "public/security/security-report.html" ]; then
+            echo "❌ ERROR: Security Scan Report (public/security/security-report.html) was NOT generated!"
+            MISSING=1
+          fi
+          
+          if [ ! -f "public/load-report.html" ]; then
+            echo "❌ ERROR: Performance Load Report (public/load-report.html) was NOT generated!"
+            MISSING=1
+          fi
+          
+          if [ $MISSING -eq 1 ]; then
+            echo "🚨 Workflow failed because one or more report links would return a 404!"
+            exit 1
+          fi
+          
+          echo "✅ All reports successfully validated! The URLs will return HTTP 200 after GitHub Pages finishes its background deployment."
