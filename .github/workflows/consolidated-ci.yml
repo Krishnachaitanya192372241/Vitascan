@@ -233,34 +233,54 @@ jobs:
           - **Status rates:** 99.16% successful, 0.84% errors
           EOF
 
-      - name: Validate Generated Links Locally
+      - name: Validate Live Deployment URLs
         run: |
-          echo "Validating that report files were successfully generated before marking success..."
-          MISSING=0
+          echo "Waiting for GitHub Pages background deployment to complete..."
+          BASE_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          echo "Target Base URL: $BASE_URL"
           
-          if [ ! -f "public/web-report.html" ]; then
-            echo "❌ ERROR: Web E2E Report (public/web-report.html) was NOT generated!"
-            MISSING=1
-          fi
+          # List of all report URLs to validate
+          URLS=(
+            "$BASE_URL/web-report.html"
+            "$BASE_URL/android/android-report.html"
+            "$BASE_URL/security/security-report.html"
+            "$BASE_URL/load-report.html"
+          )
           
-          if [ ! -f "public/android/android-report.html" ]; then
-            echo "❌ ERROR: Android E2E Report (public/android/android-report.html) was NOT generated!"
-            MISSING=1
-          fi
+          # GitHub Pages can take a few minutes to update after a push to gh-pages branch.
+          # We will poll for up to 5 minutes (30 attempts * 10 seconds).
+          MAX_RETRIES=30
           
-          if [ ! -f "public/security/security-report.html" ]; then
-            echo "❌ ERROR: Security Scan Report (public/security/security-report.html) was NOT generated!"
-            MISSING=1
-          fi
+          for URL in "${URLS[@]}"; do
+            echo "Validating URL: $URL"
+            RETRY_COUNT=0
+            SUCCESS=0
+            
+            while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+              HTTP_CODE=$(curl -s -L -o /dev/null -w "%{http_code}" "$URL")
+              if [ "$HTTP_CODE" -eq 200 ]; then
+                echo "✅ URL is live and returned HTTP 200: $URL"
+                SUCCESS=1
+                break
+              fi
+              echo "URL returned HTTP $HTTP_CODE. Waiting 10 seconds for Pages to finish deploying... ($RETRY_COUNT/$MAX_RETRIES)"
+              sleep 10
+              RETRY_COUNT=$((RETRY_COUNT+1))
+            done
+            
+            if [ $SUCCESS -eq 0 ]; then
+              echo "❌ ERROR: URL returned 404 after 5 minutes of waiting: $URL"
+              echo "🚨 Workflow failed because the report links are returning a 404!"
+              echo "Please verify that:"
+              echo "1. GitHub Pages is enabled in Settings -> Pages."
+              echo "2. 'Build and deployment' Source is set to 'Deploy from a branch'."
+              echo "3. The selected branch is 'gh-pages' and folder is '/ (root)'."
+              exit 1
+            fi
+          done
           
-          if [ ! -f "public/load-report.html" ]; then
-            echo "❌ ERROR: Performance Load Report (public/load-report.html) was NOT generated!"
-            MISSING=1
-          fi
-          
-          if [ $MISSING -eq 1 ]; then
-            echo "🚨 Workflow failed because one or more report links would return a 404!"
-            exit 1
-          fi
-          
-          echo "✅ All reports successfully validated! The URLs will return HTTP 200 after GitHub Pages finishes its background deployment."
+          echo "✅ All final report URLs verified with HTTP 200!"
+          echo "Final URLs printed below:"
+          for URL in "${URLS[@]}"; do
+            echo "$URL"
+          done
