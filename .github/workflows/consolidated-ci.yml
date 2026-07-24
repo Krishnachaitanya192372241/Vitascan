@@ -166,7 +166,6 @@ jobs:
           node-version: '20'
           
       - name: Build VitaScan Web App
-        working-directory: frontend
         run: |
           npm install
           npm run build
@@ -179,21 +178,21 @@ jobs:
         run: |
           # Copy reports into the Vite build directory so they are hosted alongside the real web app
           # We use specific paths to ensure they match exactly what the Markdown summary and validation loop expect
-          cp -r web-e2e-reports/HTML/* frontend/dist/ || true
+          cp -r web-e2e-reports/HTML/* dist/ || true
           
-          mkdir -p frontend/dist/android
-          cp -r android-e2e-reports/* frontend/dist/android/ || true
+          mkdir -p dist/android
+          cp -r android-e2e-reports/* dist/android/ || true
           
-          mkdir -p frontend/dist/security
-          cp -r security-reports/* frontend/dist/security/ || true
+          mkdir -p dist/security
+          cp -r security-reports/* dist/security/ || true
           
-          cp -r load-reports/* frontend/dist/ || true
+          cp -r load-reports/* dist/ || true
 
       - name: Deploy to GitHub Pages Branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./frontend/dist
+          publish_dir: ./dist
           force_orphan: true
         continue-on-error: true
 
